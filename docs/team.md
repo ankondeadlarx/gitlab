@@ -1,11 +1,8 @@
-**Team Name:** P- 5
-
-**Team Members:**
-
-*UCID:* 30215500 | *Name:* Arghya Ghosh
-
-*UCID:* 30202347 | *Name:* Dominic Afuba
-
-*UCID:* 30233609 | *Name:* Dylan Shiels
-
-*UCID:* 30234836 | *Name:* Clement Luo
+## Team Name: P- 5
+| Name | UCID |
+| --- | --- |
+| Arghya Ghosh | 30215500 |
+| Dominic Afuba | 30202347 |
+| Dylan Shiels | 30233609 |
+| Clement Luo | 30234836 |
+| Scott Brown | 30193949 |
