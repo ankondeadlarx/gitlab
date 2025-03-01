@@ -13,4 +13,9 @@ Skill based matchmaking systems exist to encourage healthy competition by provid
 1. Players will have an experience level which represents their success over time. This level gradually increases as they play and earn points.
     - Each level will require more points than the last to reach the next level. This means that the first several levels will all be relatively close in skill, and that more skilled players will all be quite close in level.
     - This level does not depreciate over time, so it more accurately represents how long a player has played. Playing with high skill will increase their level faster, but playing non-seriously will not be punishing.
-2. 
+2. Play sessions will have an intensity value which starts at 0.5 and can range from 0.0 to 2.0. This number slides up and down throughout a play session based on victory or defeat and the level of the opponent.
+   - Winning against a higher level opponent will increase the intensity level by 0.2
+   - Winning against a lower level opponent will not affect the intensity level
+   - Losing against a higher level opponent will decrease the intensity level by 0.1
+   - Losing against a lower level opponent will decrease the intensity score by 0.3
+3. Players will be matched against other players at random with a preference for opponents whose level is close to the player's level multiplied by their session intensity level.
