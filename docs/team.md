@@ -2,6 +2,8 @@
 | Name           | UCID     |
 |----------------|----------|
 | Arghya Ghosh   | 30215500 |
+| Aria Moonsie   | 30197427 |
+| Brad Cronin    | 30166514 |
 | Clement Luo    | 30234836 |
 | Dominic Afuba  | 30202347 |
 | Dylan Shiels   | 30233609 |
@@ -10,4 +12,3 @@
 | Jason Bakajika | 30208299 |
 | Scott Brown    | 30193949 |
 | Zaman Dogar    | 30222423 |
-| Brad Cronin    | 30166514 |
