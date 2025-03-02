@@ -1,3 +1,8 @@
+package core.gamelogic.tictactoe;
+
+import core.gamelogic.Game;
+import core.gamelogic.Player;
+
 public class TicTacToe implements Game {
 
     private String board;
