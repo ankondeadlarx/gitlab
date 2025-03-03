@@ -1,9 +1,18 @@
-package core.gamelogic;
+public interface IGame {
 
-public interface Game {
+    public Player getWinner();
 
+    public Player getLoser();
 
+    //public Player getTurn();
 
+    public String getBoard();
+
+    public boolean drew();
+
+    public boolean playerQuit();
+
+    public boolean gameIsOver();
 
 
 }
