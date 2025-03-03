@@ -1,5 +1,3 @@
-package core.gamelogic;
-
 public class Player {
 
     private String username;
