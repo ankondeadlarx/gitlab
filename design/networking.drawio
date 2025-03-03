@@ -5,18 +5,18 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="RsaLFU6DeN-my90bISCz-1" value="UserAccount" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="400" y="187" width="160" height="140" as="geometry">
+          <mxGeometry x="260" y="200" width="210" height="180" as="geometry">
             <mxRectangle x="400" y="187" width="110" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="RsaLFU6DeN-my90bISCz-2" value="- username: String&lt;div&gt;- password: String&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="RsaLFU6DeN-my90bISCz-1" vertex="1">
-          <mxGeometry y="26" width="160" height="44" as="geometry" />
+          <mxGeometry y="26" width="210" height="44" as="geometry" />
         </mxCell>
         <mxCell id="RsaLFU6DeN-my90bISCz-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="RsaLFU6DeN-my90bISCz-1" vertex="1">
-          <mxGeometry y="70" width="160" height="8" as="geometry" />
+          <mxGeometry y="70" width="210" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="RsaLFU6DeN-my90bISCz-4" value="+ getHistory(): String&lt;div&gt;+ recordResult(record: GameRecord)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="RsaLFU6DeN-my90bISCz-1" vertex="1">
-          <mxGeometry y="78" width="160" height="62" as="geometry" />
+        <mxCell id="RsaLFU6DeN-my90bISCz-4" value="+ getHistory(): String&lt;div&gt;+ recordResult(record: GameRecord)&lt;/div&gt;&lt;div&gt;+ getRating(game: String): double&lt;/div&gt;&lt;div&gt;+ getUsername()&lt;/div&gt;&lt;div&gt;+ setUsername()&lt;/div&gt;&lt;div&gt;+ setPassword()&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="RsaLFU6DeN-my90bISCz-1" vertex="1">
+          <mxGeometry y="78" width="210" height="102" as="geometry" />
         </mxCell>
         <mxCell id="ltI1NpTEDJ7RzG2uVxWX-3" value="Database" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="540" y="-80" width="110" height="50" as="geometry" />
