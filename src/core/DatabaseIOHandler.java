@@ -7,12 +7,64 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * Handles communication between the database and the program.
+ *
+ * @author Clement Luo
+ */
 public class DatabaseIOHandler {
+    //URL of the web server
     private static final String BASE_URL = "http://127.0.0.1:8000";
+
+    //Http client
     private final HttpClient httpClient = HttpClient.newHttpClient();
 
-    public DatabaseIOHandler() {
+    //Constructor
+    public DatabaseIOHandler() {}
+
+    /**
+     * Register an account to the database.
+     *
+     * @param username
+     *            The username of the account.
+     * @param password
+     *            The password of the account.
+     * @return boolean
+     *             true if registration is successful,
+     *             false otherwise
+     */
+    public boolean registerAccount(String username, String password){
         //
+        return true;
+    }
+
+    /**
+     * Retrieve the password from an account.
+     *
+     * @param username
+     *            The username of the account.
+     * @return String
+     *            The password of the account, null if the account is not found
+     */
+    private String getPassword(String username){
+        //
+        return null;
+    }
+
+    /**
+     * Verify password.
+     *
+     * @param usernameInput
+     *            The username of the account entered.
+     * @param passwordInput
+     *            The username of the account entered.
+     * @return boolean
+     *             true if the password matches,
+     *             false otherwise
+     */
+    public boolean login(String usernameInput, String passwordInput){
+        //
+        return false;
     }
 
     //This method adds an account with username "Bob" and password "password"
