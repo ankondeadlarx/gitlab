@@ -133,9 +133,19 @@ public class ConnectFour extends AbstractGame{
 
 
     public boolean drew() {
-
+        // if there was a winner
+        if(this.getWinner()!=null){
+            return false;
+        }
+        // looking through all rows and columns
+        for(int i=0; i<ROWS; i++){
+            for(int j=0; j<COLS; j++){
+                // if there is an open place in the board
+                if(this.board.charAt(i+j)=='o'){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
-
-
-
 }
