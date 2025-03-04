@@ -1,0 +1,37 @@
+**Account Registration**
+
+1. User inputs username/password
+2. Check for proper input
+3. Insert into database using (DatabaseIOHandler)
+    3a. Check if the account already exists
+    3b. If not, then send request to database to add account
+    3c. Verify that the operation has been successful
+4. Login (But skip username/password input)
+
+**Account Login**
+
+1. User input username/password
+...
+
+**Logout**
+
+**Game Start**
+
+**Game End**
+
+**Gameplay Communication**
+
+When the current player makes a move:
+1. Recieve string input from gameplay
+2. Do necessary processing
+3. Add to the game session log
+4. Notify database
+5. Check if all players gamestate is synchronized
+
+When other players make moves:
+
+1. Recieve notification from database
+2. Update game session log
+3. Do necessary processing
+4. Send input to gameplay
+5. Check if all players gamestate is synchronized
