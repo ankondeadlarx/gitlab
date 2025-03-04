@@ -1,4 +1,4 @@
-package core;
+package core.networking;
 
 import java.net.URI;
 import java.net.URLEncoder;

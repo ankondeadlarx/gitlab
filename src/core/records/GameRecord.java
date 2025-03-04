@@ -1,4 +1,4 @@
-package core;
+package core.records;
 
 /**
  * A record of a game played.

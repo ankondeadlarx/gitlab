@@ -1,4 +1,4 @@
-package core;
+package core.sessions;
 
 /**
  * A gameplay session.
