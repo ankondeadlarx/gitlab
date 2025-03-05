@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c260c66f-0380-4256-87f6-31abc5d2d34d" name="Changes" comment="Updated team md file">
+    <list default="true" id="c260c66f-0380-4256-87f6-31abc5d2d34d" name="Changes" comment="Updated Program_Flow.txt account log in and log out steps">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/design/Program_Flow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/design/Program_Flow.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1741150408905</updated>
       <workItem from="1741150410074" duration="914000" />
-      <workItem from="1741151436001" duration="940000" />
+      <workItem from="1741151436001" duration="1776000" />
     </task>
     <task id="LOCAL-00001" summary="Updated team md file">
       <option name="closed" value="true" />
@@ -76,14 +77,24 @@
       <option name="project" value="LOCAL" />
       <updated>1741150462816</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updated Program_Flow.txt account log in and log out steps">
+      <option name="closed" value="true" />
+      <created>1741152464835</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741152464835</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Renamed some files" />
     <MESSAGE value="Updated team md file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated team md file" />
+    <MESSAGE value="Updated Program_Flow.txt account log in and log out steps" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Program_Flow.txt account log in and log out steps" />
   </component>
 </project>

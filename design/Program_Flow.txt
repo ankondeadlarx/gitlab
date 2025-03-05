@@ -15,17 +15,18 @@
 3. Check for valid character input (if some special characters are invalid)
 4. Server verifies input with database
 5. Server produces output:
-    5a.Server responds with error message if password is invalid
-    5b.Server responds with success message if password is valid
-    5c.Server responds with retry message if failure in execution
+    5a.Server responds with retry message if failure in execution
+    5b.Screen displays success message if credentials are valid
+    5c.Screen displays failure message if credentials are invalid
 6. If successful initialise user session and retrieve data from database
 
 
-**Logout**
+**Account Logout**
 1. User initiates logout
 2. Server asks for confirmation from user
-3. User confirms terimnation of session
-4. Login screen return is initiated.
+3. Send logout request to server
+4. User confirms terimnation of session
+5. Login screen return is initiated.
 
 **Game Start**
 
