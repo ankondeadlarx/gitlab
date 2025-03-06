@@ -6,16 +6,17 @@ Goal in Context: Allow the existing user to authenticate and gain access to the 
 Preconditions:
         1. The system is running and accessible.
         2. The user has an existing account
+Trigger: The user attempts to access the system's features.
 Scenario:
         1. The user enters their username and password.
         2. The system verifies the credentials against the database.
-        3. If valid, the user is taken to the main menu.
+        3. If valid, the existing user is taken to the main menu.
         4. If the credentials are invalid, the system displays an error message and prompts the user to try again.
 Post Conditions: The user is logged in and can access the system's functionalities or receives an error message and remains logged out.
 Exceptions:
-        1. The existing filled in the wrong username and password prompting n error message and for the user to retry.
+        1. The user filled in the wrong username and password prompting n error message and for the user to retry.
         2. The system displays a message indicating login is unavailable.
-        3. The existing user's account does not exist and the system prompts the try again. After successive failures it prompts the user to sign up rather.
+        3. The user's account does not exist and the system prompts the try again. After successive failures it prompts the user to sign up rather.
         4. System timeout or other technical issues.
 Priority: High – Logging in is necessary to access other system functionalities.
 When Available: Within the first development iteration.
@@ -26,3 +27,36 @@ Channel to Secondary Actors: System interacts with the database via database req
 Open issues:
         1. Should there be a password recovery option?
         2. Should multi-factor authentication be implemented?
+
+--------------------------------------------------------
+\\
+Use Case: Sign Up
+Iteration: 1
+Primary Actor: New User
+Goal in Context: Allow a new user to create an account.
+Preconditions:
+        1. The system is powered on and accessible.
+        2. The user is on the sign-in page or has chosen to create a new account.
+Trigger: The user selects the "Sign Up" option.
+Scenario:
+        1. The user selects the "Sign Up" option.
+        2. The system presents a registration form with fields for username/email, password, and other required information.
+        3. The user fills in the form.
+        4. The system validates the entered information (e.g., checks for unique username, password strength).
+        5. If the information is valid, the system creates a new user account and stores it in the database.
+        6. The user is prompted to log in with their new credentials.
+Post Conditions: A new user account is created and the user can now log in with the newly created credentials.
+Exception:
+        1. The username or email already exists.
+        2. The password do not meet requirements
+        3. There is an error or an issue connecting to the database.
+        4. There is an ongoing system timeout or other technical issues.
+Priority: High- Sign-up is essential for growing the user base and providing access to new users.
+When Available: Within the first development iteration.
+Frequency of Use: Once per new user.
+Channel to Actor: The user interacts with the system via a graphical user interface (GUI) using a keyboard and mouse/touchscreen.
+Secondary Actors: The database for storing user accounts.
+Channel to Secondary Actors: The system interacts with the database via database requests.
+Open Issues:
+        1. Should there be an email verification process?
+        2. Should a CAPTCHA be included to prevent bots?
