@@ -176,3 +176,24 @@ Open Issues:
 
 --------------------------------------------------
 \\
+Use Case: Leaderboard
+Iteration: 1
+Primary Actor: User
+Goal in Context: Allow the user to view the leaderboard and see player rankings.
+Preconditions: The user is successfully logged in.
+Trigger: The user clicked on the ‘Leaderboard’ button.
+Scenario:
+The user successfully logged in.
+The user clicks on the ‘Leaderboard button’.
+The system retrieves the leaderboard data from the database.
+The system displays the leaderboard with player rankings.
+Post Conditions: The user is able to view the Leaderboard with up-to-date ranking.
+Exceptions:
+The Leaderboard data are not available due to database connection error, database error, and a system timeout.
+Priority: Medium - Viewing the leaderboard can enhance competition and engagement but it is not mandatory for gameplay.
+Frequency of Use: Multiple times per user depending on their interest.
+Channel to Actor: The user interacts with the system via a graphical user interface (GUI) using a keyboard and mouse/touchscreen.
+Secondary Actors: The database for player ranking information.
+Channel to Secondary Actors: System interacts with the database via database requests.
+Open Issues:
+Should there be filtering or sorting options for different categories for the leaderboard?
