@@ -259,3 +259,119 @@ Open Issues:
         2.Should profile updates require verification?
         
 --------------------------------------------------
+\\
+Use Case: Leaderboard
+Iteration: 1
+Primary Actor: User
+Goal in Context: Display the top players based on performance metrics.
+Preconditions:
+        1.The user is logged in.
+        2.The system has recorded game statistics.
+Trigger: The user selects "Leaderboard" from the main menu.
+Scenario:
+        1.The user selects "Leaderboard."
+        2.The system retrieves player rankings from the database.
+        3.The system displays the leaderboard with rankings, scores, and player names.
+Post Conditions:
+        1.The leaderboard is displayed successfully.
+        2.If unavailable, an error message is shown.
+Exceptions:
+        1.The system cannot retrieve leaderboard data due to a database issue.
+        2.No leaderboard data exists yet.
+Priority: Medium – Enhances competitiveness and engagement.
+When Available: Within the first development iteration.
+Frequency of Use: Frequently.
+Channel to Actor: GUI interface via keyboard and mouse/touchscreen.
+Secondary Actors: The database (to retrieve rankings).
+Channel to Secondary Actors: System interacts with the database via queries
+Open Issues:
+        1.Should the leaderboard display only friends or all players?
+        2.Should there be filters for different game modes?
+
+--------------------------------------------------
+\\
+
+Use Case: Game History
+Iteration: 1
+Primary Actor: User
+Goal in Context: Allow users to view their past game results.
+Preconditions:
+        1.The user is logged in.
+        2.The system has recorded game history.
+Trigger: The user selects "Game History" from the menu.
+Scenario:
+        1.The user selects "Game History."
+        2.The system retrieves past matches from the database.
+        3.The system displays details such as game type, opponents, scores, and outcomes.
+Post Conditions:
+        1.The user's past game results are displayed.
+        2.If no history is available, a message is shown.
+Exceptions:
+        1.The system fails to retrieve game history due to database issues.
+        2.No recorded game history exists for the user.
+Priority: Medium – Helps users track progress.
+When Available: Within the first development iteration.
+Frequency of Use: Occasionally.
+Channel to Actor: GUI interface via keyboard and mouse/touchscreen.
+Secondary Actors: The database (to retrieve past results).
+Channel to Secondary Actors: System interacts with the database via queries.
+Open Issues:
+        1.Should users be able to delete game history?
+        2.Should detailed statistics be shown per game?
+
+--------------------------------------------------
+\\
+Use Case: Logout
+Iteration: 1
+Primary Actor: User
+Goal in Context: Allow users to securely end their session.
+Preconditions:
+        1.The user is logged in.
+Trigger: The user selects "Logout."
+Scenario:
+        1.The user selects "Logout."
+        2.The system asks for confirmation.
+        3.The user confirms logout.
+        4.The system ends the session and redirects the user to the login screen.
+Post Conditions:
+        1.The user is logged out and must log in again to access features.
+Exceptions:
+        1.The system fails to end the session due to a technical issue.
+Priority: High – Ensures security.
+When Available: Within the first development iteration.
+Frequency of Use: Once per session.
+Channel to Actor: GUI interface via keyboard and mouse/touchscreen.
+Secondary Actors: The database (to update session status).
+Channel to Secondary Actors: System interacts with the database via queries.
+Open Issues:
+        1.Should there be an option to stay logged in?
+
+--------------------------------------------------
+\\
+Use Case: Quit Game
+Iteration: 1
+Primary Actor: User
+Goal in Context: Allow users to exit the game application.
+Preconditions:
+        1.The system is running.
+Trigger: The user selects "Quit Game."
+Scenario:
+        1.The user selects "Quit Game" from the menu.
+        2.The system prompts for confirmation.
+        3.The user confirms, and the system closes the application.
+Post Conditions:
+        1.The application exits successfully.
+Exceptions:
+        1.The system fails to close due to an error.
+        2.The user cancels the quit action before confirming.
+Priority: High – Essential for user control.
+When Available: Within the first development iteration.
+Frequency of Use: Occasionally.
+Channel to Actor: GUI interface via keyboard and mouse/touchscreen.
+Secondary Actors: None.
+Channel to Secondary Actors: None.
+Open Issues:
+        1.Should there be a warning if the user quits with unsaved progress?
+
+--------------------------------------------------
+
