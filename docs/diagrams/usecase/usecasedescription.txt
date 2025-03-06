@@ -199,3 +199,63 @@ Open Issues:
        1. Should there be filtering or sorting options for different categories for the leaderboard?
 
 --------------------------------------------------
+\\
+Use Case: Settings
+Iteration: 1
+Primary Actor: User
+Goal in Context: Allow users to configure system and game preferences.
+Preconditions:
+        1.The user is logged in.
+Trigger: The user selects "Settings" from the main menu.
+Scenario:
+        1.The user selects "Settings."
+        2.The system displays available options(audio, controls, graphics,  notifications).
+        3.The user modifies the settings and confirms changes.
+        4.The system saves the new settings.
+Post Conditions:
+        1.The new settings are applied successfully.
+Exceptions:
+        1.The system fails to save changes due to a technical issue.
+        2.The user cancels changes before saving.
+Priority: Medium – Enhances user experience.
+When Available: Within the first development iteration.
+Frequency of Use: Occasionally.
+Channel to Actor: GUI interface via keyboard and mouse/touchscreen.
+Secondary Actors: The database (to store user preferences).
+Channel to Secondary Actors: System interacts with the database via queries.
+Open Issues:
+        1.Should settings be stored locally or in the cloud?
+        2.Should there be a reset-to-default option?
+
+--------------------------------------------------
+\\
+Use Case: Profile
+Iteration: 1
+Primary Actor: User
+Goal in Context:  Allow users to view and update their profile information.
+Preconditions:
+        1.The user is logged in.
+Trigger: The user selects "Profile" from the main menu.
+Scenario:
+        1.The user selects "Profile."
+        2.The system retrieves profile data from the database.
+        3.The system displays profile details (username, avatar, game stats, etc.)
+        4.The user updates the information if desired.
+        5.The system saves the changes.
+
+Post Conditions:
+        1.The user’s profile is updated successfully.
+Exceptions:
+        1.The system cannot retrieve or save profile data due to technical issues.
+        2.The user enters invalid data (e.g., username already taken).
+Priority: Medium – Enhances user experience.
+When Available: Within the first development iteration.
+Frequency of Use: Occasionally.
+Channel to Actor: GUI interface via keyboard and mouse/touchscreen.
+Secondary Actors: The database (to store user preferences).
+Channel to Secondary Actors: System interacts with the database via queries.
+Open Issues:
+        1.Should users be able to delete their profile?
+        2.Should profile updates require verification?
+        
+--------------------------------------------------
