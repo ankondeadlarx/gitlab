@@ -72,16 +72,16 @@ Preconditions:
        2. The user has an existing account linked to a valid email address.
 Trigger: The user clicks on the "Forgot Password" link on the login screen page.
 Scenario:
-The user selects the "Forgot Password?" option.
-The system displays a password recovery form requesting the registered email address (or username).
-The user enters their email address and submits the form.
-The system verifies if the email is associated with an account.
-If the email is valid, the system sends a password reset link to the user's email via the email subsystem stub.
-The system displays a confirmation message indicating that reset instructions have been sent.
+       1. The user selects the "Forgot Password?" option.
+       2. The system displays a password recovery form requesting the registered email address (or username).
+       3. The user enters their email address and submits the form.
+       4. The system verifies if the email is associated with an account.
+       5. If the email is valid, the system sends a password reset link to the user's email via the email subsystem stub.
+       6. The system displays a confirmation message indicating that reset instructions have been sent.
 Post Conditions: The user receives an email containing a password reset link with instructions for creating a new password.
 Exception:
-If the entered email is not linked to any account, the system displays an error message prompting the user to check their input.
-If the email cannot be sent due to network or system issues, the system notifies the user and suggests retrying later.
+     1. If the entered email is not linked to any account, the system displays an error message prompting the user to check their input.
+     2. If the email cannot be sent due to network or system issues, the system notifies the user and suggests retrying later.
 Priority: Medium- Essential for account recovery and maintaining user access, though not a core gameplay function.
 When Available: Within the first development iteration.
 Frequency of Use: Infrequent- only used when a user forgets their password..
@@ -91,3 +91,59 @@ Channel to Secondary Actors: N/A
 Open Issues:
        1. Should there be a validity period of the reset link?
        2. Should additional security measures (e.g., security questions) before allowing a password reset be implemented?
+
+----------------------------------------------------
+\\
+Use Case: Games
+Iteration: 1
+Primary Actor: User
+Goal in Context: Allow the user to see all games that can be played.
+Preconditions: The user is successfully logged in.
+Trigger: The user successfully logged in.
+Scenario:
+       1. The user successfully logged in.
+       2. The system displays a list of games available.
+       3. The user browses the list and selects a game to join or test
+Post Conditions: The user is able to select a game and be able to play it.
+Exceptions:
+The user is unable to log in.
+There are network connection issues.
+There is a system timeout or other technical issues preventing the start of the gaming session.
+Priority: High- Being able to see the game library is essential to provide gameplay.
+When Available: Within the first iteration.
+Frequency of Use: Multiple times per user depending on their engagement.
+Channel to Actor: The user interacts with the system via a graphical user interface (GUI) using a keyboard and mouse/touchscreen.
+Secondary Actors: Game Server for managing game sessions and matchmaking.
+Channel to Secondary Actors: System interacts with the game server via network communication.
+Open Issues: N/A
+
+--------------------------------------------------
+Use Case: Play A Game
+Iteration: 1
+Primary Actor: User
+Goal in Context: Allow the user to join a game session.
+Preconditions: The user is logged in and selected a game to play.
+Trigger: The user selected a game to play.
+Scenario:
+        1. The user selects the game to play.
+        2. The system adds the user to the selected game session.
+        3. The system matches the player to someone of a similar skill base.
+        4. The user is taken to the game interface.
+Post Conditions: The user is added to the selected game session and can play the game.
+Exceptions:
+        1. There are no active game sessions available.
+        2. The selected game session is full.
+        3. There are network connection issues.
+        4. There is a system timeout or other technical issues preventing the start of the gaming session.
+Priority: High- Joining a game is a core functionality for multiplayer interaction.
+When Available: Within the first iteration.
+Frequency of Use: Multiple times per user depending on their engagement.
+Channel to Actor: The user interacts with the system via a graphical user interface (GUI) using a keyboard and mouse/touchscreen.
+Secondary Actors: Game Server for managing game sessions and matchmaking.
+Channel to Secondary Actors: System interacts with the game server via network communication.
+Open Issues:
+        1. Should there be requirements (e.g., rank, invite-only) to join certain games?
+        2. What happens if the game starts while the user is joining?
+
+--------------------------------------------------
+\\
