@@ -260,36 +260,6 @@ Open Issues:
         
 --------------------------------------------------
 \\
-Use Case: Leaderboard
-Iteration: 1
-Primary Actor: User
-Goal in Context: Display the top players based on performance metrics.
-Preconditions:
-        1.The user is logged in.
-        2.The system has recorded game statistics.
-Trigger: The user selects "Leaderboard" from the main menu.
-Scenario:
-        1.The user selects "Leaderboard."
-        2.The system retrieves player rankings from the database.
-        3.The system displays the leaderboard with rankings, scores, and player names.
-Post Conditions:
-        1.The leaderboard is displayed successfully.
-        2.If unavailable, an error message is shown.
-Exceptions:
-        1.The system cannot retrieve leaderboard data due to a database issue.
-        2.No leaderboard data exists yet.
-Priority: Medium – Enhances competitiveness and engagement.
-When Available: Within the first development iteration.
-Frequency of Use: Frequently.
-Channel to Actor: GUI interface via keyboard and mouse/touchscreen.
-Secondary Actors: The database (to retrieve rankings).
-Channel to Secondary Actors: System interacts with the database via queries
-Open Issues:
-        1.Should the leaderboard display only friends or all players?
-        2.Should there be filters for different game modes?
-
---------------------------------------------------
-\\
 
 Use Case: Game History
 Iteration: 1
