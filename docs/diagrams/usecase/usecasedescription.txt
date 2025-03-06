@@ -60,3 +60,34 @@ Channel to Secondary Actors: The system interacts with the database via database
 Open Issues:
         1. Should there be an email verification process?
         2. Should a CAPTCHA be included to prevent bots?
+
+-----------------------------------------------------------------------
+\\
+Use Case: Forgot Password
+Iteration: 1
+Primary Actor: Existing User
+Goal in Context: Allow the existing user to reset their password .
+Preconditions:
+       1. The system is powered on and accessible.
+       2. The user has an existing account linked to a valid email address.
+Trigger: The user clicks on the "Forgot Password" link on the login screen page.
+Scenario:
+The user selects the "Forgot Password?" option.
+The system displays a password recovery form requesting the registered email address (or username).
+The user enters their email address and submits the form.
+The system verifies if the email is associated with an account.
+If the email is valid, the system sends a password reset link to the user's email via the email subsystem stub.
+The system displays a confirmation message indicating that reset instructions have been sent.
+Post Conditions: The user receives an email containing a password reset link with instructions for creating a new password.
+Exception:
+If the entered email is not linked to any account, the system displays an error message prompting the user to check their input.
+If the email cannot be sent due to network or system issues, the system notifies the user and suggests retrying later.
+Priority: Medium- Essential for account recovery and maintaining user access, though not a core gameplay function.
+When Available: Within the first development iteration.
+Frequency of Use: Infrequent- only used when a user forgets their password..
+Channel to Actor: The user interacts with the system via a graphical user interface (GUI) using a keyboard and mouse/touchscreen.
+Secondary Actors: The email subsystem stubbed to simulate sending the reset instructions.
+Channel to Secondary Actors: N/A
+Open Issues:
+       1. Should there be a validity period of the reset link?
+       2. Should additional security measures (e.g., security questions) before allowing a password reset be implemented?
