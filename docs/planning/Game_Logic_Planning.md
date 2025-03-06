@@ -11,6 +11,8 @@
 ## Games to Implement
 The following games will be implemented as part of this project:
 1. Connect 4
+2. Checkers
+3. Whist
 
 ## Development Plan
 
