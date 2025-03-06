@@ -7,13 +7,13 @@
 | Clement Luo       | 30234836 |
 | Dominic Afuba     | 30202347 |
 | Dylan Shiels      | 30233609 |
+| Fatin Abrar Ankon | 30194388 |
+| Hamza Tahir       | 30194936 |
 | Iman Hamzat       | 30212797 |
 | Irith Irith       | 30172252 |
 | Jason Bakajika    | 30208299 |
-| Scott Brown       | 30193949 |
-| Zaman Dogar       | 30222423 |
 | Matin Rezaei      | 30188989 |
 | Melissa Aoko      | 30230823 |
-| Hamza Tahir       | 30194936 |
-| Fatin Abrar Ankon | 30194388 |
+| Scott Brown       | 30193949 |
+| Zaman Dogar       | 30222423 |
  
