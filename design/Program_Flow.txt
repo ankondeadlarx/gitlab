@@ -1,9 +1,10 @@
 **Account Registration**
 
 1. User inputs username/password
-2. Check for proper input
+2. Check for proper input 
+    2a. Check for password complexity (length, special characters, uppercase/lowercase mix)
 3. Insert into database using (DatabaseIOHandler)
-    3a. Check if the account already exists
+    3a. Check if the username already exists in database
     3b. If not, then send request to database to add account
     3c. Verify that the operation has been successful
 4. Login (But skip username/password input)
@@ -19,6 +20,23 @@
     5b.Screen displays success message if credentials are valid
     5c.Screen displays failure message if credentials are invalid
 6. If successful initialise user session and retrieve data from database
+
+
+** Forgot password **
+1. User clicks on forgot password on the login screen
+2. User inputs username/email
+    2a. Check if username/email format is valid
+    2b. Verifies input with database
+3. Provide user with a temporary one time password in provided email
+    3a. Add temporary password into database, set to expire in 15 minutes
+4. User logs in with temporary password
+    4a. If user logs in with temporary password or 15 mins has passed
+        4ai. Delete temporary password from database
+5. User gets prompted to make a new password
+    5a. System checks password validity
+    5b. New password is added to database
+
+
 
 
 **Account Logout**
