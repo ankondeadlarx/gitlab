@@ -1,0 +1,28 @@
+\\
+Use Case: Login
+Iteration: 1
+Primary Actor: Existing User
+Goal in Context: Allow the existing user to authenticate and gain access to the system's features.
+Preconditions:
+        1. The system is running and accessible.
+        2. The user has an existing account
+Scenario:
+        1. The user enters their username and password.
+        2. The system verifies the credentials against the database.
+        3. If valid, the user is taken to the main menu.
+        4. If the credentials are invalid, the system displays an error message and prompts the user to try again.
+Post Conditions: The user is logged in and can access the system's functionalities or receives an error message and remains logged out.
+Exceptions:
+        1. The existing filled in the wrong username and password prompting n error message and for the user to retry.
+        2. The system displays a message indicating login is unavailable.
+        3. The existing user's account does not exist and the system prompts the try again. After successive failures it prompts the user to sign up rather.
+        4. System timeout or other technical issues.
+Priority: High – Logging in is necessary to access other system functionalities.
+When Available: Within the first development iteration.
+Frequency of Use: Once per session (or as needed if the session times out).
+Channel to Actor: The user interacts with the system via the GUI using a keyboard and mouse/touchscreen.
+Secondary Actors: The database to verify credentials.
+Channel to Secondary Actors: System interacts with the database via database requests.
+Open issues:
+        1. Should there be a password recovery option?
+        2. Should multi-factor authentication be implemented?
