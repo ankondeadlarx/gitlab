@@ -43,9 +43,10 @@ Matchmaking systems require that some skill level measurement is recorded, so it
    - Players will earn 2 points for winning a game quickly, which is determined by the winning player making less than 40% of the average expected moves of a given game.
    - Players will earn 1 point for playing a long game, which is determined by a player making more than 125% of the average expected moves of a given game.
 3. Each game has a different number of average turns, so each game will require a different number of turns to count as a quick or long game.
-   - The average player moves in Chess is 20, so quick games are 8 turns and long games are 25 turns.
+   - ~~The average player moves in Chess is 20, so quick games are 8 turns and long games are 25 turns.~~ (We have decided against developing Chess)
    - The average player moves in Connect 4 is 22, so quick games are 9 turns and long games are 28 turns.
    - The average player moves in Checkers is 25, so quick games are 10 turns and long games are 32 turns.
+   - The average player rounds in Whist is 8, so quick games are 3 rounds and long games are 10 rounds. 
 
 Through these aspects, players will be effectively rewarded for playing with high skill, but will also still gain experience for participating in a full game. This discourages players from quitting and will keep all players motivated to play regardless of skill level.
 
