@@ -147,3 +147,32 @@ Open Issues:
 
 --------------------------------------------------
 \\
+Use Case: Game Chat
+Iteration: 1
+Primary Actor: User
+Goal in Context: Allow users to communicate with each other during a game session.
+Preconditions: The user is logged in and has successfully joined a game session.
+Trigger: The user wants to send a message to other players.
+Scenario:
+       1. The user selected a game to play from the library.
+       2. The user successfully joined a game session.
+       3. The user has access to the chat interface.
+       4. The user types a message.
+       5. The user sends the message to his opponent(s).
+       5. The message is displayed to all players in the game session.
+Post Conditions: The message is sent and displayed to other players.
+Exceptions:
+       1. There are network and connection issues the user is facing.
+       There is a system timeout or other technical issues and difficulties.
+Priority: Medium- Game chat enhances social interaction and communication during gameplay, but is not needed for gameplay.
+When Available: Within the first iteration.
+Frequency of Use: Multiple times per user during a game session.
+Channel to Actor: The user interacts with the system via a graphical user interface (GUI) using a keyboard and mouse/touchscreen.
+Secondary Actors: The game server for relaying chat messages.
+Channel to Secondary Actors: System interacts with the game server via network communication.
+Open Issues:
+       1. Should private messages or voice chat be implemented in future iterations?
+       2. Should there be filters for inappropriate or offensive words and terms?
+
+--------------------------------------------------
+\\
