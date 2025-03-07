@@ -9,6 +9,14 @@ Every game will have some universal functionalities that will be made as parenta
 ***Design:***
 
 *Universal Functionalities:*
+- There will be a `GameType` enum which declares the type of game
+
+| Enum     | Description                      |
+|----------|----------------------------------|
+| CONNECT4 | Declares the Connect 4 Game Type |
+| CHECKERS | Declares the Checker Game Type   |
+| WHIST    | Declares the Whist Game Type     |
+
 - There will be a `Player` class which handles the logic and features all players have
 
 | Attributes        | Description                                             |
@@ -25,7 +33,6 @@ Every game will have some universal functionalities that will be made as parenta
 
 | Attributes               | Description                                       |
 |--------------------------|---------------------------------------------------|
-| GameType (Enum) {}       | Available Game Types: CONNECT4, CHECKERS, WHIST   |
 | + gameType (GameType)    | The specific game being played                    |
 | + players (Player Array) | The list of all players participating in the Game |
 | - avgPlays (int)         | The average plays a Game takes to conclude        |
