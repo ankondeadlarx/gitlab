@@ -1,4 +1,4 @@
 package core.accounts;
 
-public record UserAccount() {
+public class UserAccount {
 }
