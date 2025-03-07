@@ -8,7 +8,7 @@ Every game will have some universal functionalities that will be made as parenta
 
 ***Design:***
 
-Universal Functionalities:
+*Universal Functionalities:*
 - There will be a `Player` class which handles the logic and features all players have
 
 | Attributes        | Description                                             |
@@ -22,14 +22,14 @@ Universal Functionalities:
 
 - There will be a `Game` class which handles the logic and features all games have
 
-| Attributes               | Description                                            |
-|--------------------------|--------------------------------------------------------|
-| GameType (Enum) {}       | Available Game Types: CONNECT4, CHECKERS, WHIST        |
-| + gameType (GameType)    | The specific game being played                         |
-| + players (Player Array) | The list of all players participating in the Game      |
-| - avgPlays (int)         | The average plays a Game takes to conclude             |
-| - winner (Player)        | The Player declared winner of the Game                 |
-| - firstTurn (Player)     | The Player declared the first to take a turn in a Game |
+| Attributes               | Description                                       |
+|--------------------------|---------------------------------------------------|
+| GameType (Enum) {}       | Available Game Types: CONNECT4, CHECKERS, WHIST   |
+| + gameType (GameType)    | The specific game being played                    |
+| + players (Player Array) | The list of all players participating in the Game |
+| - avgPlays (int)         | The average plays a Game takes to conclude        |
+| - winner (Player)        | The Player declared winner of the Game            |
+| - currentTurn (Player)   | The Player who is currently taking a turn         |
 
 
 - There will be a 
@@ -63,12 +63,21 @@ This game will be our most paced game, as it is played over multiple rounds and 
 
 ***Design:***
 
-Technical Aspects:
+*Technical Aspects:*
+
+- This game used playing cards, so there will be a `SuitType` enum which contains all the available suits
+
+| Enum     | Description               |
+|----------|---------------------------|
+| CLUBS    | Declares the Club Suit    |
+| SPADES   | Declares the Spade Suit   |
+| HEARTS   | Declares the Heart Suit   |
+| DIAMONDS | Declares the Diamond Suit |
+
 - This game uses playing cards, so there will be a `Card` class which stores all the information pertaining to each card
 
 | Attributes           | Description                                                        |
 |----------------------|--------------------------------------------------------------------|
-| SuitType (enum) {}   | Available Suit Types: CLUBS, SPADES, HEARTS, DIAMONDS              |
 | - rank (int)         | The Numerical Rank of the Card                                     |
 | - suit (SuitType)    | The Suit Type of the Card                                          |
 | - held (boolean)     | The Holder of the Card. true = One Player, false = All Players     |
@@ -79,21 +88,46 @@ Technical Aspects:
 | Attribute              | Description                                                           |
 |------------------------|-----------------------------------------------------------------------|
 | + cards (Card Array)   | The Array of all Cards this Pile Contains                             |
-| + visibleTop (boolean) | The Visibility of the topmost Card. true = Face-Up, false = Face-Down |
 
 - There will be a `WhistGame` class which inherits from the `Game` class and handles the logic of the game
 
-| Unique Attributes | Description                                   |
-|-------------------|-----------------------------------------------|
-| + deck (Pile)     | The initial Deck of 52 Cards, randomly sorted |
-| + draw (Pile)     | The Pile for Players to draw from             |
-| + discard (Pile)  | The Pile for Discarded Cards                  |
+| Unique Attributes  | Description                                                                                |
+|--------------------|--------------------------------------------------------------------------------------------|
+| + round (int)      | The Numerical Round of the Game                                                            |
+| + stage (String)   | The Current Stage of the Round                                                             |
+| + trump (SuitType) | The Trump Suit for the Round                                                               |
+| - deck (Pile)      | The initial Deck of 52 Cards. These are in standard order, are not held, and are Face-Down |
+| - draw (Pile)      | The Pile for Players to draw from                                                          |
+| - discard (Pile)   | The Pile for Discarded Cards                                                               |
 
-Goal of Play:
-- Over multiple rounds, the first player to reach 6 points is declared the winner. The current round is displayed in the top right corner with the names and score of each player beneath. The average number of rounds to win is 8.
+*Goal of Play:*
+- Over multiple rounds, the first player to reach 6 points is declared the winner. The current round is prominently displayed in the top right corner. The points to win is prominently displayed in the top left corner with the names and score of each player beneath. The average number of rounds to win is 8.
 
-Order of Play:
-1. At the start of the game, a Pile called `deck` will be made
-2. At the onset of each round, the Dealer must be selected. To select the dealer, the players must both draw a card at the same time from a face-down deck of 52 cards splayed out on the screen. Whoever selects the lowest ranked card is deemed the dealer. 
+*Order of Play:*
+- At the onset of each round, the Dealer must be selected to shuffle up the deck and deal out the cards
+    - The players are given a prompt to choose a card to compete for the Dealer position.
+    - To select the dealer, the players must both draw a card at the same time from a face-down deck of 52 cards splayed out on the screen. 
+    - Each player's selection is displayed and whoever selects the lowest ranked card is deemed the Dealer (they get the first turn). 
+    - The drawn cards are then placed back to the bottom of the deck.
+    - There is a 10 second timer for selection. *(All Timers will be implemented once Real-Time Interactions exist)*
 
+*Gameplay:*
+
+The Game has entered the Dealing Stage, which is displayed under the current round in the top right corner.
+1. The Deck is given to the Dealer who must perform three shuffles on the deck.
+    - The Dealer is given a text prompt to shuffle the Deck, including how many shuffles they have to perform.
+    - To perform each shuffle, the Dealer must click on one of the few types of shuffles that will be shown at the bottom of the screen, glowing white.
+    - There will be a 10 second timer through the whole shuffling process.
+2. The shuffled Deck is retained by the Dealer as they still have to deal out the cards.
+    - The Dealer is given a text prompt to deal the cards and the topmost card of the Deck will glow white.
+    - To deal the cards, the Dealer must click the topmost card repeatedly, which will alternate between giving the Opponent and the Dealer a single card. Dealing the cards will be complete once each Player has 13 cards.
+    - When a card is clicked, it is removed from the Deck pile and put into the appropriate Player's hand.
+    - The remaining cards in the Deck pile are transferred into the Draw pile, which is in the middle of the table and off to the right.
+3. The Dealer must now reveal the Trump Suit for the round to enter the first stage of play.
+    - The Dealer is given a text prompt to reveal the Trump Suit, and the topmost card on the Draw pile will glow white.
+    - To reveal the Trump Suit, the Dealer must click the topmost card on the Draw pile.
+    - Both players will be given a text prompt showing the Trump Suit of the round.
+
+The Game has entered the Drafting Stage, with the Trump Suit and Stage being displayed under the current round in the top right corner.
+1. 
 
