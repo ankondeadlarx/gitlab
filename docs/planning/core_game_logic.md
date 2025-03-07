@@ -17,7 +17,7 @@ Every game will have some universal functionalities that will be made as parenta
 | CHECKERS | Declares the Checker Game Type   |
 | WHIST    | Declares the Whist Game Type     |
 
-- There will be a `PieceType` enum which declares the type of piece
+- There will be a `PieceType` enum which contains all the types of Pieces
 
 | Enum    | Description                          |
 |---------|--------------------------------------|
@@ -48,8 +48,8 @@ Every game will have some universal functionalities that will be made as parenta
 | Attributes               | Description                                       |
 |--------------------------|---------------------------------------------------|
 | + gameType (GameType)    | The specific Game being played                    |
-| + players (Player Array) | The list of all players participating in the Game |
-| - avgPlays (int)         | The average plays a Game takes to conclude        |
+| + players (Player Array) | The list of all Players participating in the Game |
+| - avgPlays (int)         | The Average Plays a Game takes to conclude        |
 | - winner (Player)        | The Player declared winner of the Game            |
 | - turnHolder (Player)    | The Player who is currently taking a turn         |
 
@@ -61,7 +61,7 @@ Every Game utilizes pieces, so for the sake of making this program able to be ad
 
 ***Design:***
 
-- There will be a `Colour` Enum which contains all the available colours for a Checker
+- There will be a `ColourType` enum which contains all the available colours for a Checker
 
 | Enum   | Description              |
 |--------|--------------------------|
@@ -72,12 +72,18 @@ Every Game utilizes pieces, so for the sake of making this program able to be ad
 
 - There will be a `Checker` class which inherits from the `GamePiece` class and contains all the information about each Checker
 
-| Unique Attributes   | Description                                                       |
-|---------------------|-------------------------------------------------------------------|
-| + colour (Colour)   | The Colour of the Checker                                         |
-| + stacked (boolean) | The Stacked Status of the Checker. true = Stacked, false = Single | 
+| Unique Attributes     | Description                                                       |
+|-----------------------|-------------------------------------------------------------------|
+| + colour (ColourType) | The Colour of the Checker                                         |
+| + stacked (boolean)   | The Stacked Status of the Checker. true = Stacked, false = Single |
 
-- There will be a `SuitType` Enum which contains all the available suits for a Card
+- There will be a `CheckerBag` class which stores an Array of Checkers
+
+| Attributes               | Description                                |
+|--------------------------|--------------------------------------------|
+| checkers (Checker Array) | The Array of all Checkers the Bag contains |
+
+- There will be a `SuitType` enum which contains all the available suits for a Card
 
 | Enum     | Description               |
 |----------|---------------------------|
@@ -96,9 +102,9 @@ Every Game utilizes pieces, so for the sake of making this program able to be ad
 
 - There will be a `CardPile` class which stores an Array of Cards
 
-| Attribute              | Description                                                           |
-|------------------------|-----------------------------------------------------------------------|
-| + cards (Card Array)   | The Array of all Cards this Pile Contains                             |
+| Attribute              | Description                               |
+|------------------------|-------------------------------------------|
+| + cards (Card Array)   | The Array of all Cards this Pile Contains |
 
 ## Connect 4 Directory
 
@@ -122,13 +128,50 @@ This game will be the most casual of the games available to our users, but that 
 
 
 
+*Gameplay:*
+
+
+
+*Conclusion:*
+
+
+
 ## Checkers Directory
 
 ***Preamble:***
 
-This game will be one of our more competitive options, as it has a lot of space for skill expression.
+This game will be one of our more competitive options, as it has a lot of space for skill expression. One must continuously try to move their pieces to the other side of the board while maintaining defense against the opponent. Each player will be assigned a black or white colour to compete to be the last colour standing.
 
 ***Design:***
+
+*Technical Aspects:*
+
+- There will be a `CheckerBoard` class which handles the logic and features of the Game Board
+
+| Attributes              | Description                      |
+|-------------------------|----------------------------------|
+| - size (int)            | The numerical Width of the Board |
+| + tiles (Checker Array) | All of the Tiles on the Board    |
+
+- There will be a `CheckersGame` class which inherits from the `Game` class and handles the logic of the Game
+
+| Unique Attributes      | Description                           |
+|------------------------|---------------------------------------|
+| + board (CheckerBoard) | The Board the Game is being played on |
+
+*Goal Of Play:*
+
+
+
+*Order of Play:*
+
+
+
+*Gameplay:*
+
+
+
+*Conclusion:*
 
 
 
@@ -142,16 +185,24 @@ This game will be our most paced game, as it is played over multiple rounds and 
 
 *Technical Aspects:*
 
-- There will be a `WhistGame` class which inherits from the `Game` class and handles the logic of the game
+- There will be a `StageType` enum which contains all the possible stages for the Game
 
-| Unique Attributes  | Description                                                                                |
-|--------------------|--------------------------------------------------------------------------------------------|
-| + round (int)      | The Numerical Round of the Game                                                            |
-| + stage (String)   | The Current Stage of the Round                                                             |
-| + trump (SuitType) | The Trump Suit for the Round                                                               |
-| - deck (Pile)      | The initial Deck of 52 Cards. These are in standard order, are not held, and are Face-Down |
-| - draw (Pile)      | The Pile for Players to draw from                                                          |
-| - discard (Pile)   | The Pile for Discarded Cards                                                               |
+| Enum  | Description                             |
+|-------|-----------------------------------------|
+| DEAL  | Declares the Dealing Stage of the Game  |
+| DRAFT | Declares the Drafting Stage of the Game |
+| DUEL  | Declares the Dueling Stage of the Game  |
+
+- There will be a `WhistGame` class which inherits from the `Game` class and handles the logic of the Game
+
+| Unique Attributes   | Description                                                                                |
+|---------------------|--------------------------------------------------------------------------------------------|
+| + round (int)       | The Numerical Round of the Game                                                            |
+| + stage (StageType) | The Current Stage Type of the Round                                                        |
+| + trump (SuitType)  | The Trump Suit for the Round                                                               |
+| - deck (Pile)       | The initial Deck of 52 Cards. These are in standard order, are not held, and are Face-Down |
+| - draw (Pile)       | The Pile for Players to draw from                                                          |
+| - discard (Pile)    | The Pile for Discarded Cards                                                               |
 
 - The cards are valued by rank from highest to lowest as 14 (Ace), 13 (King), 12 (Queen), 11 (Jack), 10, 9, 8, 7, 6, 5, 4, 3, 2.
 
