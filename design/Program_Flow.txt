@@ -43,11 +43,15 @@
 1. User initiates logout
 2. Server asks for confirmation from user
 3. Send logout request to server
-4. User confirms terimnation of session
+4. User confirms termination of session
 5. Login screen return is initiated.
 
 **Game Start**
-
+1. User initiates request to start a game
+2. Server initiates matchmaking process
+3. Server matches all available players
+4. Game session is created and sent to all players
+5. Game begins
 **Game End**
 
 **Gameplay Communication**
