@@ -52,9 +52,20 @@
 3. Server matches all available players
 4. Game session is created and sent to all players
 5. Game begins
+
 **Game End**
+1. Game ends through winning/losing condition or initiated through user
+2. Server validates request from user/ Server validates winning/losing condition
+3. Game result is displayed
+4. Server sends players to main menu
 
 **Gameplay Communication**
+1. Receive string input from gameplay
+2. Validate move
+3. Add to game session log
+4. Update game state
+5. Notify database
+6. Check if all players' game state is syncronized
 
 When the current player makes a move:
 1. Recieve string input from gameplay
