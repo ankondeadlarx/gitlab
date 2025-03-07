@@ -21,7 +21,7 @@ Every game will have some universal functionalities that will be made as parenta
 | + hand (Array)    | The items in possession of the Player                   |
 | + spoils (Array)  | The items the Player has captured                       |
 
-- There will be a `Game` class which handles the logic and features all games have
+- There will be a `Game` class (Perhaps Interface?) which handles the logic and features all games have
 
 | Attributes               | Description                                       |
 |--------------------------|---------------------------------------------------|
