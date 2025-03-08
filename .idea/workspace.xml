@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c260c66f-0380-4256-87f6-31abc5d2d34d" name="Changes" comment="Updated program flow">
-      <change beforePath="$PROJECT_DIR$/design/Program_Flow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/design/Program_Flow.txt" afterDir="false" />
-    </list>
+    <list default="true" id="c260c66f-0380-4256-87f6-31abc5d2d34d" name="Changes" comment="Updated program flow" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +66,7 @@
       <workItem from="1741150410074" duration="914000" />
       <workItem from="1741151436001" duration="2390000" />
       <workItem from="1741323386901" duration="2491000" />
-      <workItem from="1741406858199" duration="1515000" />
+      <workItem from="1741406858199" duration="2768000" />
     </task>
     <task id="LOCAL-00001" summary="Updated team md file">
       <option name="closed" value="true" />
@@ -118,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741408058363</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Updated program flow">
+      <option name="closed" value="true" />
+      <created>1741410053382</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1741410053382</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
