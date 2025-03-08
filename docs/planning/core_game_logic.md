@@ -158,7 +158,15 @@ The Game has how entered the turn taking stage and will alternate between each P
 3. The move concludes, and the Game checks for win conditions.
    - The Player's plays attribute increments by 1.
    - If the validColumns Array is empty, the Game ends in a draw; if the Game detects a horizontal, vertical, or diagonal line attached to the played Checker, the Game ends and the Player Wins; Otherwise, the Game will transfer the turnHolder attribute to the Opponent and loop through the turn taking steps again.
+#### Handling Invalid Moves
 
+To enforce fair gameplay, the system must prevent illegal moves.
+
+#### Connect Four:
+- If a player **drops a checker in a full column**, the move is rejected.
+- If a player **clicks outside the board**, no move is registered.
+- If the network **delays a move**, only the **first received valid move**
+- 
 *Conclusion:*
 
 When the Game reaches its final win conditions, it will use the parental class to declare the Winner, calculate the experience points to award Players, and communicate these results and other relevant information to the Player's Account.
@@ -228,6 +236,15 @@ The Game has now entered the turn taking stage and will alternate between each P
    - If the Player jumped over an Opponent's Checker, that Checker is removed from the Board and the Game will check for more available jumps (The jumped Checker is moved from the Opponent's hand to the Player's spoils, which are displayed to the left of the Player).
    - If the Player's Checker reached the opposite edge of the Board, it will become a King (That Checker's stack attribute becomes true).
    - If there are no more opposite colour Checkers on the board, the Game ends and the Player wins; If the validSquares Array is empty, the Game ends and the Opponent wins; Otherwise, the Game will transfer the turnHolder attribute to the Opponent and loop through the turn taking steps again.
+#### Handling Invalid Moves
+
+To enforce fair gameplay, the system must prevent illegal moves.
+
+#### Checkers:
+- If a player **tries to move a piece backward (without being a King)**, the move is blocked.
+- If a player **has a jump available but does not take it**, the move is invalid.
+- If a player **tries to move into an occupied square**, they must choose another move.
+
 
 *Conclusion:*
 
