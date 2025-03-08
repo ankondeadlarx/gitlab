@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c260c66f-0380-4256-87f6-31abc5d2d34d" name="Changes" comment="Updated program flow" />
+    <list default="true" id="c260c66f-0380-4256-87f6-31abc5d2d34d" name="Changes" comment="Added .gitignore to stats branch">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_4_2025_10_06_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_4_2025_10_06_PM_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_4_2025_10_06_PM__Changes_.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +52,21 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Project iteration 1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Project iteration 1" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -149,6 +169,7 @@
     <MESSAGE value="Updated game start" />
     <MESSAGE value="Updated game end and gameplay communication" />
     <MESSAGE value="Updated program flow" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated program flow" />
+    <MESSAGE value="Added .gitignore to stats branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added .gitignore to stats branch" />
   </component>
 </project>
