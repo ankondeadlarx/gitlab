@@ -52,6 +52,16 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Vlorp\IdeaProjects\School\SENG 300\seng300-w25-project" />
+      <recent name="C:\Users\Vlorp\IdeaProjects\School\SENG 300\seng300-w25-project\.idea" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Vlorp\IdeaProjects\School\SENG 300\seng300-w25-project\.idea\temp" />
+      <recent name="C:\Users\Vlorp\IdeaProjects\School\SENG 300\seng300-w25-project\.idea" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Project iteration 1" />
