@@ -10,7 +10,6 @@
 4. Login (But skip username/password input)
 
 **Account Login**
-
 1. User input username/password
 2. Send login request to server
 3. Check for valid character input (if some special characters are invalid)
