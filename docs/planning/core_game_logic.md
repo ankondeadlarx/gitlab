@@ -117,26 +117,51 @@ This game will be the most casual of the games available to our users, but that 
 ***Design:***
 
 *Technical Aspects:*
+- There will be a `ConnectGrid` class which handles the logic and features of the Game Board
 
+| Attributes                 | Description                                                              |
+|----------------------------|--------------------------------------------------------------------------|
+| - width (int)              | The numerical Width of the Board (Represents columns in the slots Array) |
+| - height (int)             | The numerical Height of the Board (Represents rows in the slots Array)   |
+| + slots (2D Checker Array) | All of the Slots on the Board                                            |
 
+- There will be a `Connect4Game` class which inherits from the `Game` class and handles the logic of the Game
 
-
+| Unique Attributes           | Description                                          |
+|-----------------------------|------------------------------------------------------|
+| + grid (ConnectGrid)        | The Grid the Game is being played with               |
+| + validColumns (int Array)  | The y positions of current valid Columns in the Grid |
 
 *Goal Of Play:*
-
-
+- The first Player to have a contiguous row of 4 Checkers horizontally, vertically, or diagonally is declared the Winner. The standard height of the board is 6 and the standard width is 7. The average number of turns to win is 22.
 
 *Order of Play:*
-
-
+- At the onset of the game, the Player using red checkers must be selected to determine turn order.
+   - The Players will be given a text prompt to choose two Checkers to compete to use the red Checkers.
+   - To select the Player with red Checkers, the Players must both draw two checkers at the same time from an opaque bag of randomly assorted Checkers displayed on the screen.
+   - Each Player's selection is displayed and whoever picked two red Checkers gets to play with red Checkers (The red Checker Player is put into the turnHolder of the game).
+   - The drawn Checkers are put back into the bag and 21 Checkers are then put into each Player's Hand and are displayed in a pile at the bottom of the screen.
+   - Each column of the Grid is added to the validColumns Array. 
+   - There is a 10 second timer for selection. *(All Timers will be implemented once Real-Time Interactions exist)*
 
 *Gameplay:*
 
-
+The Game has how entered the turn taking stage and will alternate between each Player. This section of the Game loops until a Line is made or the Grid is full.
+1. The move begins, and the Player whose turn it is must select a piece to move to progress the game.
+   - The Player will be given a text prompt to select a Checker and make a move. All of their Checkers will glow white.
+   - To select a Checker, the Player must click on one of their Checkers. The selected Checker will glow blue.
+2. The move continues, and the Player now must select which column they want to put their selected Checker in.
+   - The same text prompt remains at the top of the screen, but now all of the tops of valid columns will glow white (Column validity is checked by looking at the first (top) slot of the column for emptiness).
+   - To select the column to put their Checker in, the Player must click anywhere on the column.
+   - The selected Checker will be moved to the farthest right (down) empty position in the column (The Checker's xPosition and yPosition attributes are updated).
+   - There is a 15 second timer for the entire move selection process.
+3. The move concludes, and the Game checks for win conditions.
+   - The Player's plays attribute increments by 1.
+   - If the validColumns Array is empty, the Game ends in a draw; if the Game detects a horizontal, vertical, or diagonal line attached to the played Checker, the Game ends and the Player Wins; Otherwise, the Game will transfer the turnHolder attribute to the Opponent and loop through the turn taking steps again.
 
 *Conclusion:*
 
-
+When the Game reaches its final win conditions, it will use the parental class to declare the Winner, calculate the experience points to award Players, and communicate these results and other relevant information to the Player's Account.
 
 ## Checkers Directory
 
@@ -163,7 +188,7 @@ This game will be one of our more competitive options, as it has a lot of space 
 | + validSquares (2D int Array) | The x and y position of current valid Squares on the Board |
 
 *Goal Of Play:*
-- The first Player to clear the board of all opposing pieces by capturing them, or forcing the opponent to have no valid moves, is declared the winner. Captured pieces are displayed on the left of each Player. The average number of turns to win is 25.
+- The first Player to clear the board of all opposing pieces by capturing them, or forcing the opponent to have no valid moves, is declared the Winner. Captured pieces are displayed on the left of each Player. The standard size of the board is 8. The average number of turns to win is 25.
 
 *Order of Play:*
 - At the onset of the game, the Player using black checkers must be selected to determine turn order.
@@ -175,10 +200,11 @@ This game will be one of our more competitive options, as it has a lot of space 
    - There is a 10 second timer for selection. *(All Timers will be implemented once Real-Time Interactions exist)*
 
 *Gameplay:*
-The Game has now entered the turn taking stage and will alternate between each Player. This section of the Game loops until only one colour of Checker remains on the Board.
+
+The Game has now entered the turn taking stage and will alternate between each Player. This section of the Game loops until only one colour of Checker remains on the Board or the Player cannot make a move.
 1. The move begins, and the Player whose turn it is must select a piece to move to progress the game.
    - The Player will be given a text prompt to select a Checker and make a move. All of their Checkers will glow white.
-   - To select a Checker, the Player must click on one of their Checkers. The selected Checker glow blue the white glow of their other Checkers to significantly dim.
+   - To select a Checker, the Player must click on one of their Checkers. The selected Checker glow blue and the white glow of their other Checkers to significantly dim.
    - The Player can select whichever Checker they wish to use and change their selection as much as they want before making a move.
 2. The move continues, and the Player must now select where they want to move their selected Checker.
    - The same text prompt remains at the top of the screen, but now valid squares will glow white.
@@ -199,13 +225,12 @@ The Game has now entered the turn taking stage and will alternate between each P
    - The Player's plays attribute increments by 1.
    - The validSquares Array is cleared.
    - The Game will check for opposite colour Checkers to determine if the enemy will be forced to jump over the Player's Checker (If a valid jump is found, then the validSquares Array is populated accordingly).
-   - If there are no more opposite colour Checkers on the Board, the Game ends immediately and the Player wins.
-   - If there are no valid squares available, the Game immediately ends and the Player loses.
    - If the Player jumped over an Opponent's Checker, that Checker is removed from the Board and the Game will check for more available jumps (The jumped Checker is moved from the Opponent's hand to the Player's spoils, which are displayed to the left of the Player).
    - If the Player's Checker reached the opposite edge of the Board, it will become a King (That Checker's stack attribute becomes true).
-   - If there are no more opposite colour Checkers on the board, the Game ends and the Player wins; If the validSquares Array is empty, the Game ends and the Opponent wins; Otherwise, the game will transfer the turnHolder attribute to the opponent and loop through the turn taking steps again.
+   - If there are no more opposite colour Checkers on the board, the Game ends and the Player wins; If the validSquares Array is empty, the Game ends and the Opponent wins; Otherwise, the Game will transfer the turnHolder attribute to the Opponent and loop through the turn taking steps again.
 
 *Conclusion:*
+
 When the Game reaches its final win conditions, it will use the parental class to declare the Winner, calculate the experience points to award Players, and communicate these results and other relevant information to the Player's Account.
 
 ## Whist Directory
@@ -240,7 +265,7 @@ This game will be our most paced game, as it is played over multiple rounds and 
 - The cards are valued by rank from highest to lowest as 14 (Ace), 13 (King), 12 (Queen), 11 (Jack), 10, 9, 8, 7, 6, 5, 4, 3, 2.
 
 *Goal of Play:*
-- Over multiple rounds, the first Player to reach 6 points is declared the winner. The current round is prominently displayed in the top right corner. The points to win is prominently displayed in the top left corner with the names and score of each Player beneath. The average number of rounds to win is 8.
+- Over multiple rounds, the first Player to reach 6 points is declared the Winner. The current round is prominently displayed in the top right corner. The points to win is prominently displayed in the top left corner with the names and score of each Player beneath. The average number of rounds to win is 8.
 
 *Order of Play:*
 - At the onset of each round, the Dealer must be selected to shuffle up the deck and deal out the cards
@@ -254,9 +279,10 @@ This game will be our most paced game, as it is played over multiple rounds and 
 *Gameplay:*
 
 The Game has entered the Dealing Stage, which is displayed under the current round in the top right corner.
-1. The Deck is given to the Dealer who must perform three shuffles on the deck.
+1. The Deck is given to the Dealer who must perform 3 shuffles on the deck.
    - The Dealer is given a text prompt to shuffle the Deck, including how many shuffles they have to perform.
    - To perform each shuffle, the Dealer must click on one of the few types of shuffles that will be shown at the bottom of the screen, glowing white.
+      - Those types of shuffles being: Scramble, Riffle, Overhand, and Cut.
    - There will be a 7 second timer through the whole shuffling process.
 2. The shuffled Deck is retained by the Dealer as they still have to deal out the cards.
    - The Dealer is given a text prompt to deal the cards and the topmost card of the Deck will glow white.
