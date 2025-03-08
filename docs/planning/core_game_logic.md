@@ -166,7 +166,9 @@ To enforce fair gameplay, the system must prevent illegal moves.
 - If a player **drops a checker in a full column**, the move is rejected.
 - If a player **clicks outside the board**, no move is registered.
 - If the network **delays a move**, only the **first received valid move**
-- 
+- If **all columns are full** and no player has won, the game ends in a **draw**.
+- A message is displayed: **"Game Over! It's a Draw!"**
+
 *Conclusion:*
 
 When the Game reaches its final win conditions, it will use the parental class to declare the Winner, calculate the experience points to award Players, and communicate these results and other relevant information to the Player's Account.
