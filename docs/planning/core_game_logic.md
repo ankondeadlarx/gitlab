@@ -137,37 +137,27 @@ This game will be the most casual of the games available to our users, but that 
 
 *Order of Play:*
 - At the onset of the game, the Player using red checkers must be selected to determine turn order.
-   - The Players will be given a text prompt to choose two Checkers to compete to use the red Checkers.
-   - To select the Player with red Checkers, the Players must both draw two checkers at the same time from an opaque bag of randomly assorted Checkers displayed on the screen.
-   - Each Player's selection is displayed and whoever picked two red Checkers gets to play with red Checkers (The red Checker Player is put into the turnHolder of the game).
-   - The drawn Checkers are put back into the bag and 21 Checkers are then put into each Player's Hand and are displayed in a pile at the bottom of the screen.
-   - Each column of the Grid is added to the validColumns Array. 
-   - There is a 10 second timer for selection. *(All Timers will be implemented once Real-Time Interactions exist)*
+    - The Players will be given a text prompt to choose two Checkers to compete to use the red Checkers.
+    - To select the Player with red Checkers, the Players must both draw two checkers at the same time from an opaque bag of randomly assorted Checkers displayed on the screen.
+    - Each Player's selection is displayed and whoever picked two red Checkers gets to play with red Checkers (The red Checker Player is put into the turnHolder of the game).
+    - The drawn Checkers are put back into the bag and 21 Checkers are then put into each Player's Hand and are displayed in a pile at the bottom of the screen.
+    - Each column of the Grid is added to the validColumns Array.
+    - There is a 10 second timer for selection. *(All Timers will be implemented once Real-Time Interactions exist)*
 
 *Gameplay:*
 
 The Game has how entered the turn taking stage and will alternate between each Player. This section of the Game loops until a Line is made or the Grid is full.
 1. The move begins, and the Player whose turn it is must select a piece to move to progress the game.
-   - The Player will be given a text prompt to select a Checker and make a move. All of their Checkers will glow white.
-   - To select a Checker, the Player must click on one of their Checkers. The selected Checker will glow blue.
+    - The Player will be given a text prompt to select a Checker and make a move. All of their Checkers will glow white.
+    - To select a Checker, the Player must click on one of their Checkers. The selected Checker will glow blue.
 2. The move continues, and the Player now must select which column they want to put their selected Checker in.
-   - The same text prompt remains at the top of the screen, but now all of the tops of valid columns will glow white (Column validity is checked by looking at the first (top) slot of the column for emptiness).
-   - To select the column to put their Checker in, the Player must click anywhere on the column.
-   - The selected Checker will be moved to the farthest right (down) empty position in the column (The Checker's xPosition and yPosition attributes are updated).
-   - There is a 15 second timer for the entire move selection process.
+    - The same text prompt remains at the top of the screen, but now all of the tops of valid columns will glow white (Column validity is checked by looking at the first (top) slot of the column for emptiness).
+    - To select the column to put their Checker in, the Player must click anywhere on the column.
+    - The selected Checker will be moved to the farthest right (down) empty position in the column (The Checker's xPosition and yPosition attributes are updated).
+    - There is a 15 second timer for the entire move selection process.
 3. The move concludes, and the Game checks for win conditions.
-   - The Player's plays attribute increments by 1.
-   - If the validColumns Array is empty, the Game ends in a draw; if the Game detects a horizontal, vertical, or diagonal line attached to the played Checker, the Game ends and the Player Wins; Otherwise, the Game will transfer the turnHolder attribute to the Opponent and loop through the turn taking steps again.
-#### Handling Invalid Moves
-
-To enforce fair gameplay, the system must prevent illegal moves.
-
-#### Connect Four:
-- If a player **drops a checker in a full column**, the move is rejected.
-- If a player **clicks outside the board**, no move is registered.
-- If the network **delays a move**, only the **first received valid move**
-- If **all columns are full** and no player has won, the game ends in a **draw**.
-- A message is displayed: **"Game Over! It's a Draw!"**
+    - The Player's plays attribute increments by 1.
+    - If the validColumns Array is empty, the Game ends in a draw; if the Game detects a horizontal, vertical, or diagonal line attached to the played Checker, the Game ends and the Player Wins; Otherwise, the Game will transfer the turnHolder attribute to the Opponent and loop through the turn taking steps again.
 
 *Conclusion:*
 
@@ -202,51 +192,42 @@ This game will be one of our more competitive options, as it has a lot of space 
 
 *Order of Play:*
 - At the onset of the game, the Player using black checkers must be selected to determine turn order.
-   - The Players will be given a text prompt to choose two Checkers to compete to use the black Checkers.
-   - To select the Player with black Checkers, the Players must both draw two checkers at the same time from an opaque bag of randomly assorted Checkers displayed on the screen.
-   - Each Player's selection is displayed and whoever picked two black Checkers gets to play with black Checkers (The black Checker Player is put into the turnHolder of the game).
-   - The drawn Checkers are put back into the bag and Checkers are then put into each Player's Hand.
-   - The Checkers are then sequentially displayed in the correct positions on the Board (Each Checker's xPosition and yPosition attributes will be updated accordingly. Black Checkers will occupy the top three rows of the board. White Checkers will occupy the bottom three rows).
-   - There is a 10 second timer for selection. *(All Timers will be implemented once Real-Time Interactions exist)*
+    - The Players will be given a text prompt to choose two Checkers to compete to use the black Checkers.
+    - To select the Player with black Checkers, the Players must both draw two checkers at the same time from an opaque bag of randomly assorted Checkers displayed on the screen.
+    - Each Player's selection is displayed and whoever picked two black Checkers gets to play with black Checkers (The black Checker Player is put into the turnHolder of the game).
+    - The drawn Checkers are put back into the bag and Checkers are then put into each Player's Hand.
+    - The Checkers are then sequentially displayed in the correct positions on the Board (Each Checker's xPosition and yPosition attributes will be updated accordingly. Black Checkers will occupy the top three rows of the board. White Checkers will occupy the bottom three rows).
+    - There is a 10 second timer for selection. *(All Timers will be implemented once Real-Time Interactions exist)*
 
 *Gameplay:*
 
 The Game has now entered the turn taking stage and will alternate between each Player. This section of the Game loops until only one colour of Checker remains on the Board or the Player cannot make a move.
 1. The move begins, and the Player whose turn it is must select a piece to move to progress the game.
-   - The Player will be given a text prompt to select a Checker and make a move. All of their Checkers will glow white.
-   - To select a Checker, the Player must click on one of their Checkers. The selected Checker glow blue and the white glow of their other Checkers to significantly dim.
-   - The Player can select whichever Checker they wish to use and change their selection as much as they want before making a move.
+    - The Player will be given a text prompt to select a Checker and make a move. All of their Checkers will glow white.
+    - To select a Checker, the Player must click on one of their Checkers. The selected Checker glow blue and the white glow of their other Checkers to significantly dim.
+    - The Player can select whichever Checker they wish to use and change their selection as much as they want before making a move.
 2. The move continues, and the Player must now select where they want to move their selected Checker.
-   - The same text prompt remains at the top of the screen, but now valid squares will glow white.
-   - To select a square to move to, the Player must click on one of the glowing squares that is shown to them.
-   - Valid squares are initially calculated based on the colour of the current Player's Checkers, so long as the validSquares Array is currently empty:
-      - For Black Checkers with a false stack attribute: The current yPosition - 1, and the current xPosition + and - 1.
-      - For White Checkers with a false stack attribute: The current yPosition + 1, and the current xPosition + and - 1.
-      - For any Checker with a true stack attribute: The current yPosition + and - 1, and the current xPosition + and - 1.
-      - Each square is added to the validSquares Array.
-      - Each of these square checks will be subject to an out-of-bounds check which ensures no squares that aren't in the Board array are looked at.
-   - Valid squares are then modified by checking the conditions within the square:
-      - If there is a same coloured Checker in the square, that square is disqualified.
-      - If there is an opposite coloured Checker in the square, that square is disqualified and the next square diagonally is checked for emptiness, validating that square if so.
-      - All initially valid squares are checked for conditions, and if there is a jump available, all valid squares within 1 square of the selected Checker are disqualified.
-      - Jump detection is subject to an out-of-bounds check as well.
-   - There is a 20 second timer for the entire move selection process.
+    - The same text prompt remains at the top of the screen, but now valid squares will glow white.
+    - To select a square to move to, the Player must click on one of the glowing squares that is shown to them.
+    - Valid squares are initially calculated based on the colour of the current Player's Checkers, so long as the validSquares Array is currently empty:
+        - For Black Checkers with a false stack attribute: The current yPosition - 1, and the current xPosition + and - 1.
+        - For White Checkers with a false stack attribute: The current yPosition + 1, and the current xPosition + and - 1.
+        - For any Checker with a true stack attribute: The current yPosition + and - 1, and the current xPosition + and - 1.
+        - Each square is added to the validSquares Array.
+        - Each of these square checks will be subject to an out-of-bounds check which ensures no squares that aren't in the Board array are looked at.
+    - Valid squares are then modified by checking the conditions within the square:
+        - If there is a same coloured Checker in the square, that square is disqualified.
+        - If there is an opposite coloured Checker in the square, that square is disqualified and the next square diagonally is checked for emptiness, validating that square if so.
+        - All initially valid squares are checked for conditions, and if there is a jump available, all valid squares within 1 square of the selected Checker are disqualified.
+        - Jump detection is subject to an out-of-bounds check as well.
+    - There is a 20 second timer for the entire move selection process.
 3. The move concludes, and the Game handles any special events that took place during the move.
-   - The Player's plays attribute increments by 1.
-   - The validSquares Array is cleared.
-   - The Game will check for opposite colour Checkers to determine if the enemy will be forced to jump over the Player's Checker (If a valid jump is found, then the validSquares Array is populated accordingly).
-   - If the Player jumped over an Opponent's Checker, that Checker is removed from the Board and the Game will check for more available jumps (The jumped Checker is moved from the Opponent's hand to the Player's spoils, which are displayed to the left of the Player).
-   - If the Player's Checker reached the opposite edge of the Board, it will become a King (That Checker's stack attribute becomes true).
-   - If there are no more opposite colour Checkers on the board, the Game ends and the Player wins; If the validSquares Array is empty, the Game ends and the Opponent wins; Otherwise, the Game will transfer the turnHolder attribute to the Opponent and loop through the turn taking steps again.
-#### Handling Invalid Moves
-
-To enforce fair gameplay, the system must prevent illegal moves.
-
-#### Checkers:
-- If a player **tries to move a piece backward (without being a King)**, the move is blocked.
-- If a player **has a jump available but does not take it**, the move is invalid.
-- If a player **tries to move into an occupied square**, they must choose another move.
-
+    - The Player's plays attribute increments by 1.
+    - The validSquares Array is cleared.
+    - The Game will check for opposite colour Checkers to determine if the enemy will be forced to jump over the Player's Checker (If a valid jump is found, then the validSquares Array is populated accordingly).
+    - If the Player jumped over an Opponent's Checker, that Checker is removed from the Board and the Game will check for more available jumps (The jumped Checker is moved from the Opponent's hand to the Player's spoils, which are displayed to the left of the Player).
+    - If the Player's Checker reached the opposite edge of the Board, it will become a King (That Checker's stack attribute becomes true).
+    - If there are no more opposite colour Checkers on the board, the Game ends and the Player wins; If the validSquares Array is empty, the Game ends and the Opponent wins; Otherwise, the Game will transfer the turnHolder attribute to the Opponent and loop through the turn taking steps again.
 
 *Conclusion:*
 
@@ -288,86 +269,84 @@ This game will be our most paced game, as it is played over multiple rounds and 
 
 *Order of Play:*
 - At the onset of each round, the Dealer must be selected to shuffle up the deck and deal out the cards
-   - The Game's round attribute will increment by 1, as will each Players' plays attribute.
-   - The players are given a text prompt to choose a card to compete for the Dealer position.
-   - To select the dealer, the players must both draw a card at the same time from a face-down deck of 52 cards splayed out on the screen.
-   - Each player's selection is displayed and whoever selects the lowest ranked card is deemed the Dealer (The Dealer is put into the turnHolder of the Game).
-   - The drawn cards are then placed back to the bottom of the deck.
-   - There is a 10 second timer for selection. *(All Timers will be implemented once Real-Time Interactions exist)*
+    - The Game's round attribute will increment by 1, as will each Players' plays attribute.
+    - The players are given a text prompt to choose a card to compete for the Dealer position.
+    - To select the dealer, the players must both draw a card at the same time from a face-down deck of 52 cards splayed out on the screen.
+    - Each player's selection is displayed and whoever selects the lowest ranked card is deemed the Dealer (The Dealer is put into the turnHolder of the Game).
+    - The drawn cards are then placed back to the bottom of the deck.
+    - There is a 10 second timer for selection. *(All Timers will be implemented once Real-Time Interactions exist)*
 
 *Gameplay:*
 
 The Game has entered the Dealing Stage, which is displayed under the current round in the top right corner.
 1. The Deck is given to the Dealer who must perform 3 shuffles on the deck.
-   - The Dealer is given a text prompt to shuffle the Deck, including how many shuffles they have to perform.
-   - To perform each shuffle, the Dealer must click on one of the few types of shuffles that will be shown at the bottom of the screen, glowing white.
-      - Those types of shuffles being: Scramble, Riffle, Overhand, and Cut.
-   - There will be a 7 second timer through the whole shuffling process.
+    - The Dealer is given a text prompt to shuffle the Deck, including how many shuffles they have to perform.
+    - To perform each shuffle, the Dealer must click on one of the few types of shuffles that will be shown at the bottom of the screen, glowing white.
+        - Those types of shuffles being: Scramble, Riffle, Overhand, and Cut.
+    - There will be a 7 second timer through the whole shuffling process.
 2. The shuffled Deck is retained by the Dealer as they still have to deal out the cards.
-   - The Dealer is given a text prompt to deal the cards and the topmost card of the Deck will glow white.
-   - To deal the cards, the Dealer must click the topmost card repeatedly, which will alternate between giving the Opponent and the Dealer a single card. Dealing the cards will be complete once each Player has 13 cards.
-   - When a card is clicked, it is removed from the Deck pile and put into the appropriate Player's hand (The given card's held attribute becomes true).
-   - The remaining cards in the Deck pile are transferred into the Draw pile, which is in the middle of the table and off to the right.
-   - There will be a 7 second timer through the whole dealing process.
+    - The Dealer is given a text prompt to deal the cards and the topmost card of the Deck will glow white.
+    - To deal the cards, the Dealer must click the topmost card repeatedly, which will alternate between giving the Opponent and the Dealer a single card. Dealing the cards will be complete once each Player has 13 cards.
+    - When a card is clicked, it is removed from the Deck pile and put into the appropriate Player's hand (The given card's held attribute becomes true).
+    - The remaining cards in the Deck pile are transferred into the Draw pile, which is in the middle of the table and off to the right.
+    - There will be a 7 second timer through the whole dealing process.
 3. The Dealer must now reveal the Trump Suit for the round to enter the first stage of play.
-   - The Dealer is given a text prompt to reveal the Trump Suit, and the topmost card on the Draw pile will glow white.
-   - To reveal the Trump Suit, the Dealer must click the topmost card on the Draw pile (The topmost card's faceDown attribute becomes false).
-   - Both players will be given a text prompt showing the Trump Suit of the round.
-   - The Dealer has concluded their turn (The opponent is put into the turnHolder of the Game).
-   - The Cards in the Players' hands are sorted by Suit and Rank and revealed to them (The faceDown attribute of all cards in each Players' hands becomes false).
-   - There will be a 5 second timer for the revealing process.
+    - The Dealer is given a text prompt to reveal the Trump Suit, and the topmost card on the Draw pile will glow white.
+    - To reveal the Trump Suit, the Dealer must click the topmost card on the Draw pile (The topmost card's faceDown attribute becomes false).
+    - Both players will be given a text prompt showing the Trump Suit of the round.
+    - The Dealer has concluded their turn (The opponent is put into the turnHolder of the Game).
+    - The Cards in the Players' hands are sorted by Suit and Rank and revealed to them (The faceDown attribute of all cards in each Players' hands becomes false).
+    - There will be a 5 second timer for the revealing process.
 
 The Game has entered the Drafting Stage, with the Trump Suit and Stage being displayed under the current round in the top right corner. This section of the Game loops until the Draw pile has been depleted.
 1. The Trick begins, and the Player whose turn it is must select a card to lead the trick.
-   - If the revealed card on the Draw deck is of the Trump Suit or has a Rank greater than 10, it will glow gold to indicate desirability.
-   - The Player is given a text prompt to select a card to lead the trick.
-   - To select a card, the Player must click on any one of the cards in their hand, which will be placed in the middle of the table face-up (The played card's held attribute becomes false).
-   - The turn is now given over to the other Player.
-   - There will be a 15 second timer for the trick leading process.
+    - If the revealed card on the Draw deck is of the Trump Suit or has a Rank greater than 10, it will glow gold to indicate desirability.
+    - The Player is given a text prompt to select a card to lead the trick.
+    - To select a card, the Player must click on any one of the cards in their hand, which will be placed in the middle of the table face-up (The played card's held attribute becomes false).
+    - The turn is now given over to the other Player.
+    - There will be a 15 second timer for the trick leading process.
 2. The Trick continues, and the Player whose turn it is must select a card to compete in the trick.
-   - If the Player has cards that match the suit of the card in play, then they are given a text prompt to follow suit to complete the trick. All of their cards which do not match the played suit will be grayed out and unclickable.
-   - If the Player does not have cards that match the suit of the card in play, then they are given a text prompt to select any card to complete the trick.
-   - To select a card, the Player must click on any one of the available cards in their hand, which will be placed next to the leading card face-up (The played card's held attribute becomes false).
-   - There will be a 15 second timer for the trick completing process.
+    - If the Player has cards that match the suit of the card in play, then they are given a text prompt to follow suit to complete the trick. All of their cards which do not match the played suit will be grayed out and unclickable.
+    - If the Player does not have cards that match the suit of the card in play, then they are given a text prompt to select any card to complete the trick.
+    - To select a card, the Player must click on any one of the available cards in their hand, which will be placed next to the leading card face-up (The played card's held attribute becomes false).
+    - There will be a 15 second timer for the trick completing process.
 3. The trick is complete, and the winner of this trick must be determined to see who gets the revealed card on the Draw pile.
-   - The winner of the trick is determined by whichever played card has the highest rank (Trump Suited cards have their rank valued as rank + 14).
-   - Each player's hand is checked to see if they possess the more valuable card.
-   - The turn is now given to the Player who won the trick.
-   - The played cards are both moved from the Players' hands into the Discard pile in the middle of the table to the left (Both card's faceDown attribute becomes true and their held attribute becomes false).
+    - The winner of the trick is determined by whichever played card has the highest rank (Trump Suited cards have their rank valued as rank + 14).
+    - Each player's hand is checked to see if they possess the more valuable card.
+    - The turn is now given to the Player who won the trick.
+    - The played cards are both moved from the Players' hands into the Discard pile in the middle of the table to the left (Both card's faceDown attribute becomes true and their held attribute becomes false).
 4. The Players must now draw one card each from the Draw pile, with the person whose turn it is going first.
-   - Each Player, with the winner of the trick going first, will be given a text prompt to draw the topmost card. The topmost card in the Draw pile will be glowing white.
-   - To take their card, the Player must click the Draw pile, which will move the topmost card into their hand (The drawn card's held attribute becomes true and its faceDown attribute becomes false).
-   - The last Player to take a card will be given a text prompt to reveal the next prize card. The topmost card in the Draw pile will be glowing white.
-   - To reveal the next prize card, the Player must click the Draw pile (The topmost card's faceDown attribute becomes false).
-   - There will be a 5 second timer for each player for the drawing process.
-   - If the Draw pile is not empty, the game will go through another loop of the Drafting Stage. If the Draw pile is empty, the game will move on to the next stage.
+    - Each Player, with the winner of the trick going first, will be given a text prompt to draw the topmost card. The topmost card in the Draw pile will be glowing white.
+    - To take their card, the Player must click the Draw pile, which will move the topmost card into their hand (The drawn card's held attribute becomes true and its faceDown attribute becomes false).
+    - The last Player to take a card will be given a text prompt to reveal the next prize card. The topmost card in the Draw pile will be glowing white.
+    - To reveal the next prize card, the Player must click the Draw pile (The topmost card's faceDown attribute becomes false).
+    - There will be a 5 second timer for each player for the drawing process.
+    - If the Draw pile is not empty, the game will go through another loop of the Drafting Stage. If the Draw pile is empty, the game will move on to the next stage.
 
 The Game has entered the Dueling Stage, with the Trump Suit and Stage being displayed under the current round in the rop right corner. This section of the Game loops until everyone's hand is empty.
 1. The Trick begins, and the Player whose turn it is must select a card to lead the trick.
-   - The Player is given a text prompt to select a card to lead the trick.
-   - To select a card, the Player must click on any one of the cards in their hand, which will be placed in the middle of the table face-up (The played card's held attribute becomes false).
-   - The turn is now given over to the other Player.
-   - There will be a 15 second timer for the trick leading process.
+    - The Player is given a text prompt to select a card to lead the trick.
+    - To select a card, the Player must click on any one of the cards in their hand, which will be placed in the middle of the table face-up (The played card's held attribute becomes false).
+    - The turn is now given over to the other Player.
+    - There will be a 15 second timer for the trick leading process.
 2. The Trick continues, and the Player whose turn it is must select a card to compete in the trick.
-   - If the Player has cards that match the suit of the card in play, then they are given a text prompt to follow suit to complete the trick. All of their cards which do not match the played suit will be grayed out and unclickable.
-   - If the Player does not have cards that match the suit of the card in play, then they are given a text prompt to select any card to complete the trick.
-   - To select a card, the Player must click on any one of the available cards in their hand, which will be placed next to the leading card face-up (The played card's held attribute becomes false).
-   - There will be a 15 second timer for the trick completing process.
+    - If the Player has cards that match the suit of the card in play, then they are given a text prompt to follow suit to complete the trick. All of their cards which do not match the played suit will be grayed out and unclickable.
+    - If the Player does not have cards that match the suit of the card in play, then they are given a text prompt to select any card to complete the trick.
+    - To select a card, the Player must click on any one of the available cards in their hand, which will be placed next to the leading card face-up (The played card's held attribute becomes false).
+    - There will be a 15 second timer for the trick completing process.
 3. The trick is complete, and the winner of this trick must be determined to see who gets the revealed card on the Draw pile.
-   - The winner of the trick is determined by whichever played card has the highest rank (Trump Suited cards have their rank valued as rank + 14).
-   - Each Player's hand is checked to see if they possess the more valuable card.
-   - The turn is now given to the Player who won the trick.
-   - The played cards are both moved from the Players' hands into the Winning Player's spoils and placed as a pair to the right of them (Both card's faceDown attribute becomes true).
-   - If the Player's hands are not empty, the game will go through another loop of the Dueling Stage. If their hands are empty, the game will move on to the next stage.
+    - The winner of the trick is determined by whichever played card has the highest rank (Trump Suited cards have their rank valued as rank + 14).
+    - Each Player's hand is checked to see if they possess the more valuable card.
+    - The turn is now given to the Player who won the trick.
+    - The played cards are both moved from the Players' hands into the Winning Player's spoils and placed as a pair to the right of them (Both card's faceDown attribute becomes true).
+    - If the Player's hands are not empty, the game will go through another loop of the Dueling Stage. If their hands are empty, the game will move on to the next stage.
 
 The Round is now over, so the Game will calculate how many points each player earned that round to determine if the next round is to start.
 1. The Game will calculate the score of each Player and compare it to the score needed to win the game.
-   - The score of each Player is calculated by taking the total number of pairs in their spoils and subtracting that number by 6.
-   - The score of each Player is given to them and displayed in the top left corner.
-   - If no score meets the required score to win, the game will go through another round of play. If one Player's score meets the required score to win, the game will conclude.
+    - The score of each Player is calculated by taking the total number of pairs in their spoils and subtracting that number by 6.
+    - The score of each Player is given to them and displayed in the top left corner.
+    - If no score meets the required score to win, the game will go through another round of play. If one Player's score meets the required score to win, the game will conclude.
 
 *Conclusion:*
 
 When the Game reaches its final state, it will use the parental class to declare the Winner, calculate the experience points to award Players, and communicate these results and other relevant information to the Player's Account.
-
-
