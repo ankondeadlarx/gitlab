@@ -1,5 +1,4 @@
 # SENG300 Project Iteration 1
-#### Group P- 5
 
 This file lists all non-code files in the repository, their location and their purpose.
 
