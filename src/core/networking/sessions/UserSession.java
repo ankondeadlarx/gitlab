@@ -1,4 +1,4 @@
-package core.sessions;
+package core.networking.sessions;
 
 /**
  * A user's login session.
