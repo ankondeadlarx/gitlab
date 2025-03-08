@@ -158,7 +158,15 @@ The Game has how entered the turn taking stage and will alternate between each P
 3. The move concludes, and the Game checks for win conditions.
    - The Player's plays attribute increments by 1.
    - If the validColumns Array is empty, the Game ends in a draw; if the Game detects a horizontal, vertical, or diagonal line attached to the played Checker, the Game ends and the Player Wins; Otherwise, the Game will transfer the turnHolder attribute to the Opponent and loop through the turn taking steps again.
+#### Handling Invalid Moves
 
+To enforce fair gameplay, the system must prevent illegal moves.
+
+#### Connect Four:
+- If a player **drops a checker in a full column**, the move is rejected.
+- If a player **clicks outside the board**, no move is registered.
+- If the network **delays a move**, only the **first received valid move**
+- 
 *Conclusion:*
 
 When the Game reaches its final win conditions, it will use the parental class to declare the Winner, calculate the experience points to award Players, and communicate these results and other relevant information to the Player's Account.
