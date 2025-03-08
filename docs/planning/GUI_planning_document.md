@@ -33,7 +33,7 @@ The GUI will support the following games as part of the platform:
  - Integrate UI elements with placeholders for game logic interactions.
  - Implement in-game chat functionality.
  - Start testing the UI design and make improvements based on usability feedback.
- - Submit the first working version of the GUI for review and feedback.
+ - Submit the first working version of the GUI for review and feedback!
 ### Phase 3: Integration and Testing (Iteration 3 - Deadline: April 11)
  - Fully integrate the UI with the Game Logic and Networking teams' implementations.
  - Implement animations and visual effects for a polished game experience.
