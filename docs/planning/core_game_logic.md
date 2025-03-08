@@ -279,9 +279,10 @@ This game will be our most paced game, as it is played over multiple rounds and 
 *Gameplay:*
 
 The Game has entered the Dealing Stage, which is displayed under the current round in the top right corner.
-1. The Deck is given to the Dealer who must perform three shuffles on the deck.
+1. The Deck is given to the Dealer who must perform 3 shuffles on the deck.
    - The Dealer is given a text prompt to shuffle the Deck, including how many shuffles they have to perform.
    - To perform each shuffle, the Dealer must click on one of the few types of shuffles that will be shown at the bottom of the screen, glowing white.
+      - Those types of shuffles being: Scramble, Riffle, Overhand, and Cut.
    - There will be a 7 second timer through the whole shuffling process.
 2. The shuffled Deck is retained by the Dealer as they still have to deal out the cards.
    - The Dealer is given a text prompt to deal the cards and the topmost card of the Deck will glow white.
