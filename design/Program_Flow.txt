@@ -87,3 +87,10 @@ In-game chat:
 3. Server relays message to other players
 4. Messages are added to the game log chat history
 5. Server will block or blur inappropraite content
+
+Sending friend request:
+1. User selects another user and sends friend request
+2. Server receives prompt and validates request
+3. Receiving user receives a notification and can choose whether to accept or decline
+4. If accepted, both players' friend's list will be updated
+5. If declined, the request is removed from pending list

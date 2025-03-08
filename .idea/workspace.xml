@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c260c66f-0380-4256-87f6-31abc5d2d34d" name="Changes" comment="Updated game end and gameplay communication">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c260c66f-0380-4256-87f6-31abc5d2d34d" name="Changes" comment="Updated program flow">
       <change beforePath="$PROJECT_DIR$/design/Program_Flow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/design/Program_Flow.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +68,7 @@
       <workItem from="1741150410074" duration="914000" />
       <workItem from="1741151436001" duration="2390000" />
       <workItem from="1741323386901" duration="2491000" />
-      <workItem from="1741406858199" duration="1116000" />
+      <workItem from="1741406858199" duration="1515000" />
     </task>
     <task id="LOCAL-00001" summary="Updated team md file">
       <option name="closed" value="true" />
@@ -111,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741327766441</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Updated program flow">
+      <option name="closed" value="true" />
+      <created>1741408058363</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741408058363</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +142,7 @@
     <MESSAGE value="Updated Program_Flow.txt account log in and log out steps, pt2" />
     <MESSAGE value="Updated game start" />
     <MESSAGE value="Updated game end and gameplay communication" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated game end and gameplay communication" />
+    <MESSAGE value="Updated program flow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated program flow" />
   </component>
 </project>
