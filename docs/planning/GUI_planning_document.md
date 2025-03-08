@@ -124,5 +124,3 @@ This GUI follows a structured layout for seamless navigation.
 ### Integration Notes
 - Dynamic user settings update
 - Store changes
-
-
