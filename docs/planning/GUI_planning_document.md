@@ -116,6 +116,32 @@ This GUI follows a structured layout for seamless navigation.
 - Display moves after each  turn
 - Fetch updated game state after each turn
 
+
+
+### **General Enhancements**
+- **Dark Mode & Theme Customization:** Allow users to switch between light and dark mode for better accessibility.
+- **Sound & Notification Settings:** Enable sound effects for game moves and notifications for challenges or messages.
+- **Error Handling & Recovery:** Implement clear error messages and retry options for connectivity issues.
+
+### **GUI Development Plan Enhancements**
+- **UI Component Reusability:** Design modular UI components that can be reused across different game interfaces.
+- **Mobile-Friendly Design:** Ensure the UI adapts well to different screen sizes, including mobile devices.
+- **Accessibility Compliance:** Follow WCAG guidelines to make the interface accessible to users with disabilities.
+
+### **Game Features Enhancements**
+- **Spectator Mode:** Allow users to watch ongoing games.
+- **Game Replay & History:** Provide a way to review past matches.
+- **Pause & Resume Feature:** Allow users to temporarily pause a game if applicable.
+
+### **Leaderboard Enhancements**
+- **Friends & Community Rankings:** Allow users to compare rankings with friends in addition to the global leaderboard.
+- **Achievements & Badges:** Introduce rewards for milestones like winning 10 games in a row.
+
+### **In-Game Chat Enhancements**
+- **Emote & Quick Chat Options:** Provide pre-set messages for quick communication.
+- **Report & Mute Feature:** Allow players to report toxic behavior and mute users in chat.
+
+
 ## Settings
 ### Features
 - Account Information 
