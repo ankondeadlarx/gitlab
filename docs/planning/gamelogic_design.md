@@ -312,6 +312,7 @@ The Game has entered the Drafting Stage, with the Trump Suit and Stage being dis
     - There will be a 15 second timer for the trick completing process.
 3. The trick is complete, and the winner of this trick must be determined to see who gets the revealed card on the Draw pile.
     - The winner of the trick is determined by whichever played card has the highest rank (Trump Suited cards have their rank valued as rank + 14).
+       - If the following player couldn't follow suit, then they lose unless they played a trump suited card.
     - Each player's hand is checked to see if they possess the more valuable card.
     - The turn is now given to the Player who won the trick.
     - The played cards are both moved from the Players' hands into the Discard pile in the middle of the table to the left (Both card's faceDown attribute becomes true and their held attribute becomes false).
@@ -336,6 +337,7 @@ The Game has entered the Dueling Stage, with the Trump Suit and Stage being disp
     - There will be a 15 second timer for the trick completing process.
 3. The trick is complete, and the winner of this trick must be determined to see who gets the revealed card on the Draw pile.
     - The winner of the trick is determined by whichever played card has the highest rank (Trump Suited cards have their rank valued as rank + 14).
+       - If the following player couldn't follow suit, then they lose unless they played a trump suited card.
     - Each Player's hand is checked to see if they possess the more valuable card.
     - The turn is now given to the Player who won the trick.
     - The played cards are both moved from the Players' hands into the Winning Player's spoils and placed as a pair to the right of them (Both card's faceDown attribute becomes true).
