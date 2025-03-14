@@ -97,6 +97,30 @@ public class CardPile {
         return shuffledCards; //return shuffled deck
     }
 
+    /**
+     * Cut algorithm
+     * Cuts a deck at a random point and flips the top half to the bottom and bottom to top
+     *
+     * @Param cards list
+     *
+     * @Return cards list after being cut
+     */
+    public static List<Card> cut (List<Card> cards) {
+        List<Card> cutDeck = new ArrayList<>(); //list that will be returned at the end
+        int randomNum = randomNum(cards.size()); //will find a spot in the deck to cut
+
+        //for loops that will add the bottom part of the deck first and then the top part
+        for (int i = cards.size() - 1; i > randomNum; i--) { //bottom part
+            cutDeck.add(cards.get(i));
+        }
+        for (int i = 0; i <= randomNum; i++) { //top part
+            cutDeck.add(cards.get(i));
+        }
+
+        //return cut deck
+        return cutDeck;
+    }
+
 
     /**
      * Creates a String which represents a given Card Pile

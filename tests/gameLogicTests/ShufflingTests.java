@@ -45,4 +45,11 @@ public class ShufflingTests {
         cards = CardPile.scrambleShuffle(cards);
         System.out.println("Scramble shuffle deck: " + CardPile.toString(cards));
     }
+
+    @Test
+    public void testCut() {
+        System.out.println("Original deck: " + CardPile.toString(cards));
+        cards = CardPile.cut(cards);
+        System.out.println("Cut deck: " + CardPile.toString(cards));
+    }
 }
