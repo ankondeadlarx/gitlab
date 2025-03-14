@@ -5,6 +5,12 @@ import java.util.List;
 import java.util.Random;
 import java.util.*;
 
+/**
+ * Handles the creation and handling of Piles of Cards for Playing Card Games.
+ *
+ * @authors Sameer Askar
+ * @date March 13, 2025
+ */
 public class CardPile {
 
     private static int randomNum(int cardAmount) { //generates a random number for the size of the deck needed
@@ -13,52 +19,80 @@ public class CardPile {
         return randomNumber;
     }
 
-    /*
-        Takes a deck of cards and shuffles it like a riffle shuffle
-        Returns shuffled deck
+
+    /**
+     * Performs a Riffle Shuffle on a given Card Pile
+     *
+     * @param cards The given Card List to Riffle Shuffle
+     *
+     * @return The newly shuffled Card List
      */
     public static List<Card> riffleShuffle(List<Card> cards) {
+        // The List which will store the shuffle result
         List<Card> shuffledCards = new ArrayList<>();
-        int deckLength = (int) (cards.size()/2); //keeps the original size stored and keeps as whole number
+        // The size of half the Card Pile
+        int deckHalf = (int) (cards.size() / 2);
 
-        //Make 2 lists for top and bottom half of deck
+        // The Lists for storing each half of the Card Pile after splitting it
         List<Card> topHalf = new ArrayList<>();
         List<Card> bottomHalf = new ArrayList<>();
 
-        for (int i = 0; i < deckLength; i++) {
-            bottomHalf.add(cards.get(i));
-        }
-        for (int i = deckLength; i < cards.size(); i++) {
+        // Loops through the Card List, first from the start to the midpoint, then from the midpoint to the end
+        // Each half is placed into separate Lists
+        for (int i = 0; i < deckHalf; i++) {
             topHalf.add(cards.get(i));
         }
+        for (int i = deckHalf; i < cards.size(); i++) {
+            bottomHalf.add(cards.get(i));
+        }
 
+        // Performs the Riffle Shuffle on the Card Pile until all the Cards are in the Shuffled Cards List
         while (shuffledCards.size() < cards.size()) {
-            int randomNum = randomNum(2); //random number will decide if top or bottom half is placed first
+            // Randomly generates a number to determine which half of the Cards goes first
+            int randomNum = randomNum(2);
 
-            if (randomNum == 0) {
-                shuffledCards.add(bottomHalf.getLast());
-                shuffledCards.add(topHalf.getLast());
-
-                //remove placed cards
-                bottomHalf.removeLast();
-                topHalf.removeLast();
-            } else if (randomNum == 1) {
+            // Checks the random number
+            if (randomNum == 1) {
+                // Adds the bottom card of the top half first.
                 shuffledCards.add(topHalf.getLast());
                 shuffledCards.add(bottomHalf.getLast());
 
-                //remove placed cards
+                // Removes those Cards from each half.
                 topHalf.removeLast();
                 bottomHalf.removeLast();
+
+            } else if (randomNum == 0) {
+                // Adds the bottom card of the bottom half first.
+                shuffledCards.add(bottomHalf.getLast());
+                shuffledCards.add(topHalf.getLast());
+
+                // Removes those Cards from each half.
+                bottomHalf.removeLast();
+                topHalf.removeLast();
             }
         }
+
+        // Returns the resulting list of shuffled Cards
         return shuffledCards;
     }
 
-    public static String toString(List<Card> cards) { //prints out a deck in the order it is in the pile
+
+    /**
+     * Creates a String which represents a given Card Pile
+     *
+     * @param cards The given Card List to make into a String
+     *
+     * @return The ordered Card List as a String
+     */
+    public static String toString(List<Card> cards) {
+        // Initialized String to return
         String cardList = "[";
-        //Index and size to track when the last element comes
+
+        // Variables the track when last element comes
         int index = 0;
         int size = cards.size();
+
+        // Loops through the Card Pile to print the name of each Card within
         for (Card card : cards) {
             if (card.getRank() == 1) {
                 cardList = cardList + "Ace of " + card.getSuit();
@@ -71,12 +105,17 @@ public class CardPile {
             } else {
                 cardList = cardList + card.getRank() + " of " + card.getSuit();
             }
-            //Only add a comma if not the last element
+
+            // Adds a common between entried only if it is not the final element
             if (index < size - 1) {
                 cardList = cardList + ", ";
             }
+
+            // Increments the index
             index++;
         }
+
+        // Finalizes the String and returns it
         cardList = cardList + "]";
         return cardList;
     }
