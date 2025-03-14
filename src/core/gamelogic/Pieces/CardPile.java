@@ -131,29 +131,19 @@ public class CardPile {
      */
     public static String toString(List<Card> cards) {
         // Initialized String to return
-        String cardList = "[";
+        StringBuilder cardList = new StringBuilder("[");
 
         // Variables the track when last element comes
         int index = 0;
         int size = cards.size();
 
-        // Loops through the Card Pile to print the name of each Card within
+        // Loops through the Card Pile to append the name of each Card within
         for (Card card : cards) {
-            if (card.getRank() == 1) {
-                cardList = cardList + "Ace of " + card.getSuit();
-            } else if (card.getRank() == 11) {
-                cardList = cardList + "Jack of " + card.getSuit();
-            } else if (card.getRank() == 12) {
-                cardList = cardList + "Queen of " + card.getSuit();
-            } else if (card.getRank() == 13) {
-                cardList = cardList + "King of " + card.getSuit();
-            } else {
-                cardList = cardList + card.getRank() + " of " + card.getSuit();
-            }
+            cardList.append(card.toString());
 
-            // Adds a common between entried only if it is not the final element
+            // Adds a comma between entries only if it is not the final element
             if (index < size - 1) {
-                cardList = cardList + ", ";
+                cardList.append(", ");
             }
 
             // Increments the index
@@ -161,8 +151,8 @@ public class CardPile {
         }
 
         // Finalizes the String and returns it
-        cardList = cardList + "]";
-        return cardList;
+        cardList.append("]");
+        return cardList.toString();
     }
 }
 
