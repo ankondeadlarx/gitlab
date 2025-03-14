@@ -110,10 +110,10 @@ public class CardPile {
         int randomNum = randomNum(cards.size()); //will find a spot in the deck to cut
 
         //for loops that will add the bottom part of the deck first and then the top part
-        for (int i = cards.size() - 1; i > randomNum; i--) { //bottom part
+        for (int i = randomNum; i < cards.size(); i++) { //bottom part
             cutDeck.add(cards.get(i));
         }
-        for (int i = 0; i <= randomNum; i++) { //top part
+        for (int i = 0; i < randomNum; i++) { //top part
             cutDeck.add(cards.get(i));
         }
 
