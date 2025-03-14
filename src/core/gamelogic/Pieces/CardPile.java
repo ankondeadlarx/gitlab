@@ -8,30 +8,128 @@ import java.util.*;
 /**
  * Handles the creation and handling of Piles of Cards for Playing Card Games.
  *
- * @authors Sameer Askar
+ * @authors Sameer Askar, Dylan Shiels
  * @date March 13, 2025
  */
 public class CardPile {
+    // ATTRIBUTES
 
-    private static int randomNum(int cardAmount) { //generates a random number for the size of the deck needed
-        Random random = new Random();
-        int randomNumber = random.nextInt(cardAmount);
-        return randomNumber;
+    // The List of Cards held in this Card Pile
+    private List<Card> cards;
+
+
+    // CONSTRUCTOR
+
+    /**
+     * Instantiates a Card Pile with a List of Cards
+     *
+     * @param cardList The given List of Cards to store in this Card Pile
+     */
+    public CardPile(List<Card> cardList) {
+        this.cards = cardList;
     }
 
 
+    // GETTERS
+
     /**
-     * Performs a Riffle Shuffle on a given Card Pile
+     * Gets the Card on the top of this Card Pile
      *
-     * @param cards The given Card List to Riffle Shuffle
+     * @return The topmost Card of this Card Pile
+     */
+    public Card getTopCard() {
+        return this.cards.getFirst();
+    }
+
+    /**
+     * Gets the Card on the bottom of this Card Pile
+     *
+     * @return The bottommost Card of this Card Pile
+     */
+    public Card getBottomCard() {
+        return this.cards.getLast();
+    }
+
+    /**
+     * Gets the Card at a given index of this Card Pile
+     *
+     * @param index The given index to
+     * @return The Card at the given index of this Card Pile
+     */
+    public Card getSpecificCard(int index) {
+        return this.cards.get(index);
+    }
+
+
+    // SETTERS
+
+    /**
+     * Adds a new Card to the top of the Card Pile
+     *
+     * @param newCard The given Card to add to the Card Pile
+     */
+    public void addCards(Card newCard) {
+        // List to store the new Card Pile based on the size required
+        List<Card> newCards = new ArrayList<>();
+
+        // Adds the given Card to the top of the new Card Pile
+        newCards.add(newCard);
+        // Adds the Cards in the current Card Pile under the given Card
+        newCards.addAll(this.cards);
+
+        // Sets the current Card Pile to the new Card Pile
+        this.cards = newCards;
+    }
+
+    /**
+     * Adds a multiple new Cards to the top of the Card Pile
+     *
+     * @param newCardList The given Cards to add to the Card Pile
+     */
+    public void addCards(List<Card> newCardList) {
+        // List to store the new Card Pile based on the size required
+        List<Card> newCards = new ArrayList<>();
+
+        // Adds the given Card List to the top of the new Card Pile
+        newCards.addAll(newCardList);
+        // Adds the Cards in the current Card Pile under the given Cards
+        newCards.addAll(this.cards);
+
+        // Sets the current Card Pile to the new Card Pile
+        this.cards = newCards;
+    }
+
+
+    // METHODS
+
+    /**
+     * Generates a random number to use for selecting a random Card given a number of Cards
+     *
+     * @param cardAmount The given integer number of Cards to randomly choose from
+     * @return The randomly selected integer number for the Card to be selected
+     */
+    private static int randomNum(int cardAmount) {
+        // Random number generator to use for selection
+        Random random = new Random();
+
+        // Randomly generates a number reflecting the given amount of Cards
+        int randomNumber = random.nextInt(cardAmount);
+
+        // Returns the randomly generated number
+        return randomNumber;
+    }
+
+    /**
+     * Riffle Shuffle Algorithm
+     * Simulates a Riffle Shuffle on this Card Pile where the Card Pile is cut in half and each half is riffled together
      *
      * @return The newly shuffled Card List
      */
-    public static List<Card> riffleShuffle(List<Card> cards) {
+    public List<Card> riffleShuffle() {
         // The List which will store the shuffle result
         List<Card> shuffledCards = new ArrayList<>();
         // The size of half the Card Pile
-        int deckHalf = (int) (cards.size() / 2);
+        int deckHalf = (int) (this.cards.size() / 2);
 
         // The Lists for storing each half of the Card Pile after splitting it
         List<Card> topHalf = new ArrayList<>();
@@ -40,14 +138,14 @@ public class CardPile {
         // Loops through the Card List, first from the start to the midpoint, then from the midpoint to the end
         // Each half is placed into separate Lists
         for (int i = 0; i < deckHalf; i++) {
-            topHalf.add(cards.get(i));
+            topHalf.add(this.cards.get(i));
         }
-        for (int i = deckHalf; i < cards.size(); i++) {
-            bottomHalf.add(cards.get(i));
+        for (int i = deckHalf; i < this.cards.size(); i++) {
+            bottomHalf.add(this.cards.get(i));
         }
 
         // Performs the Riffle Shuffle on the Card Pile until all the Cards are in the Shuffled Cards List
-        while (shuffledCards.size() < cards.size()) {
+        while (shuffledCards.size() < this.cards.size()) {
             // Randomly generates a number to determine which half of the Cards goes first
             int randomNum = randomNum(2);
 
@@ -77,44 +175,40 @@ public class CardPile {
     }
 
     /**
-     * Scramble shuffle algorithm
-     * Simulates a shuffle method where the cards are dispersed at random on the table and brought back togehter
+     * Scramble Shuffle Algorithm
+     * Simulates a Scramble Shuffle on this Card Pile where all the Cards are dispersed at random on the table and brought back together
      *
-     * @Param cards Given a list of cards to scramble
-     *
-     * @Return The list of cards in the scrambled order
+     * @return The newly shuffled Card List
      */
-    public static List<Card> scrambleShuffle(List<Card> cards) {
+    public List<Card> scrambleShuffle() {
         List<Card> shuffledCards = new ArrayList<>(); //create list for shuffled cards
-        int deckSize = cards.size(); //int stored for purpose of loop parameter
+        int deckSize = this.cards.size(); //int stored for purpose of loop parameter
 
         while (shuffledCards.size() < deckSize) {
-            int randomNum = randomNum(cards.size()); //randomly chooses a valid index for cards to add
-            shuffledCards.add(cards.get(randomNum)); //add random card to shuffled list
-            cards.remove(randomNum); //remove the card from the original list to avoid duplicates
+            int randomNum = randomNum(this.cards.size()); //randomly chooses a valid index for cards to add
+            shuffledCards.add(this.cards.get(randomNum)); //add random card to shuffled list
+            this.cards.remove(randomNum); //remove the card from the original list to avoid duplicates
         }
 
         return shuffledCards; //return shuffled deck
     }
 
     /**
-     * Cut algorithm
-     * Cuts a deck at a random point and flips the top half to the bottom and bottom to top
+     * Cut Algorithm
+     * Simulates a Cut on this Card Pile at a random point and flips the top half to the bottom and bottom to top
      *
-     * @Param cards list
-     *
-     * @Return cards list after being cut
+     * @return The newly cut Card List
      */
-    public static List<Card> cut (List<Card> cards) {
+    public List<Card> cut () {
         List<Card> cutDeck = new ArrayList<>(); //list that will be returned at the end
-        int randomNum = randomNum(cards.size()); //will find a spot in the deck to cut
+        int randomNum = randomNum(this.cards.size()); //will find a spot in the deck to cut
 
         //for loops that will add the bottom part of the deck first and then the top part
-        for (int i = randomNum; i < cards.size(); i++) { //bottom part
-            cutDeck.add(cards.get(i));
+        for (int i = randomNum; i < this.cards.size(); i++) { //bottom part
+            cutDeck.add(this.cards.get(i));
         }
         for (int i = 0; i < randomNum; i++) { //top part
-            cutDeck.add(cards.get(i));
+            cutDeck.add(this.cards.get(i));
         }
 
         //return cut deck
@@ -127,7 +221,7 @@ public class CardPile {
      *
      * @param cards The given Card List to make into a String
      *
-     * @return The ordered Card List as a String
+     * @return The String of the ordered Card List
      */
     public static String toString(List<Card> cards) {
         // Initialized String to return

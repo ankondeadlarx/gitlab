@@ -11,8 +11,12 @@ import core.gamelogic.PieceType;
  */
 public class Card extends GamePiece {
     // ATTRIBUTES
+
+    // The Suit Type of this Card
     private final SuitType suit;
+    // The Rank of this Card
     private final int rank;
+    // The Face Visibility of this Card
     private boolean faceDown;
 
 
@@ -23,7 +27,7 @@ public class Card extends GamePiece {
      * @param held The given Held status of this Card
      * @param suit The given Suit Type of this Card
      * @param rank The given integer Rank of this Card
-     * @param faceDown The given face visibility of this Card
+     * @param faceDown The given boolean Face visibility of this Card
      */
     public Card(PieceType type, boolean held, SuitType suit, int rank, boolean faceDown) {
         super(type, held);
@@ -66,7 +70,7 @@ public class Card extends GamePiece {
     // METHODS
 
     /**
-     * Flips this Card to change its face visibility
+     * Flips this Card to change its Face visibility
      */
     protected void flip() {
         faceDown = !faceDown;
