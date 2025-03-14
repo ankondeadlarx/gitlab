@@ -1,6 +1,8 @@
 package gameLogicTests;
 import core.gamelogic.Pieces.*;
 import org.junit.*;
+import org.junit.jupiter.api.BeforeEach;
+
 import java.io.*;
 import java.util.*;
 
@@ -35,5 +37,12 @@ public class ShufflingTests {
         }
 
         System.out.println("Riffle shuffle deck: " + CardPile.toString(cards));
+    }
+
+    @Test
+    public void testScrambleShuffle() {
+        System.out.println("Original deck: " + CardPile.toString(cards));
+        cards = CardPile.scrambleShuffle(cards);
+        System.out.println("Scramble shuffle deck: " + CardPile.toString(cards));
     }
 }

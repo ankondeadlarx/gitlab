@@ -76,6 +76,27 @@ public class CardPile {
         return shuffledCards;
     }
 
+    /**
+     * Scramble shuffle algorithm
+     * Simulates a shuffle method where the cards are dispersed at random on the table and brought back togehter
+     *
+     * @Param cards Given a list of cards to scramble
+     *
+     * @Return The list of cards in the scrambled order
+     */
+    public static List<Card> scrambleShuffle(List<Card> cards) {
+        List<Card> shuffledCards = new ArrayList<>(); //create list for shuffled cards
+        int deckSize = cards.size(); //int stored for purpose of loop parameter
+
+        while (shuffledCards.size() < deckSize) {
+            int randomNum = randomNum(cards.size()); //randomly chooses a valid index for cards to add
+            shuffledCards.add(cards.get(randomNum)); //add random card to shuffled list
+            cards.remove(randomNum); //remove the card from the original list to avoid duplicates
+        }
+
+        return shuffledCards; //return shuffled deck
+    }
+
 
     /**
      * Creates a String which represents a given Card Pile
