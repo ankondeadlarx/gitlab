@@ -10,7 +10,7 @@ public class PlayerDatabaseStub {
 
     public boolean usernameIsTaken(String username){
         if(random.nextDouble() <= PROBABILITY_OF_USERNAME_TAKEN){
-            throw new usernameTakenException();
+            //throw new usernameTakenException();
             return false;
         }
         return true;
@@ -18,7 +18,7 @@ public class PlayerDatabaseStub {
     
     public boolean authenticate(String username, String password){
         if(random.nextDouble() <= PROBABILITY_OF_AUTHENTICATION_FAILURE) {
-            throw new authenticationFailedException();
+            //throw new authenticationFailedException();
             return false;
         }
         return true;

@@ -11,8 +11,8 @@ public class Card extends GamePiece{
         this.faceDown = faceDown;
     }
 
-    public SuitType getSuit() {
-        return suit;
+    public String getSuit() {
+        return suit.getDisplayName();
     }
 
     public int getRank() {
