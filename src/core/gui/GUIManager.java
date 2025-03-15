@@ -10,22 +10,25 @@ import java.io.IOException;
 public class GUIManager {
     private static Stage primaryStage;
 
-    public static void initialize(Stage stage) {
+    public static void setPrimaryStage(Stage stage) {
         primaryStage = stage;
-        primaryStage.setTitle("Board Game Platform");
-        primaryStage.setResizable(false);  // Optional: Prevent resizing
     }
 
-    public static void switchScreen(String fxmlFile) {
+    public static void switchScene(String fxmlFile) {
         try {
-            FXMLLoader loader = new FXMLLoader(GUIManager.class.getResource("/resources/fxml/" + fxmlFile + ".fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
+            // Prevent loading any game-related screens
+            if (fxmlFile.equals("ConnectFour.fxml") || fxmlFile.equals("Checkers.fxml")) {
+                System.out.println("Game logic is disabled for now.");
+                return;  // Do not switch to game logic screens
+            }
+
+            Parent root = FXMLLoader.load(GUIManager.class.getResource("/fxml/" + fxmlFile));
+            Scene scene = new Scene(root, 800, 600);
+            scene.getStylesheets().add(GUIManager.class.getResource("/css/login.css").toExternalForm());
             primaryStage.setScene(scene);
-            primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();
-            System.err.println("Error loading screen: " + fxmlFile);
         }
     }
+
 }
