@@ -58,9 +58,9 @@ public class Card extends GamePiece {
     }
 
     /**
-     * Gets the face visibility of this Card
+     * Gets the Face visibility of this Card
      *
-     * @return The face visibility to be retrieved
+     * @return The boolean Face visibility to be retrieved
      */
     public boolean isFaceDown() {
         return faceDown;
